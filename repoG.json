@@ -1,0 +1,22 @@
+{
+	"version": "1.0.1",
+	"change": ["chuibot","goibot","bans","listban"],
+	"modules": {
+		"commands": {
+			"chuibot": "2.0.0",
+			"listban": "3.1.2",
+			"poem": "3.1.2",
+			"random": "3.1.2",
+			"rank": "3.1.2",
+			"goibot": "1.1.0",
+			"alime": "1.1.2",
+			"allbox": "1.0.0",
+			"aothatday": "1.0.2",
+			"bans": "1.1.2",
+			"antiout": "1.1.2"
+		},
+		"events": {
+			"antiout": "1.1.2"
+		}
+	}
+}
