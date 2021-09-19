@@ -1,7 +1,7 @@
 {
-    "language": "en",
+    "language": "vi",
     "keyActive": "",
-    "DeveloperMode": false,
+    "DeveloperMode": true,
     "autoCreateDB": true,
     "allowInbox": true,
     "autoClean": false,
@@ -10,10 +10,10 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "Bot Jukie",
-    "PREFIX": "/",
+    "BOTNAME": "Bot JRT",
+    "PREFIX": "💟",
     "ADMINBOT": [
-        "USERID1"
+        "Điền uid fb vô"
     ],
     "DATABASE": {
         "sqlite": {
@@ -26,7 +26,7 @@
         "listenEvents": true,
         "pauseLog": true,
         "logLevel": "error",
-        "selfListen": false,
+        "selfListen": true,
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36"
     }
 }
