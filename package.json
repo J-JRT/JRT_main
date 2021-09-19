@@ -1,6 +1,6 @@
 {
-	"name": "miraiBot",
-	"version": "1.2.14",
+	"name": "MiraiVuotban",
+	"version": "1.2.15",
 	"description": "A simple Facebook Messenger Bot made by me(CatalizCS) and my brother SpermLord.",
 	"main": "mirai.js",
 	"scripts": {
@@ -25,25 +25,27 @@
 	"author": "CatalizCS & SpermLord",
 	"license": "GPL-3.0",
 	"bugs": {
-		"url": "https://github.com/miraipr0ject/miraiv2/issues"
+		"url": "https://github.com/J-JRT/miraivuotgban/issues/1"
 	},
-	"homepage": "https://github.com/miraipr0ject/miraiv2#readme",
+	"homepage": "https://github.com/J-JRT/miraivuotgban#readme",
 	"dependencies": {
-		"helyt": "",
 		"@miraipr0ject/assets": "",
 		"axios": "",
 		"body-parser": "",
 		"caesar-salad": "",
-		"canvas": "",
+		"canvas": "^2.8.0",
 		"chalk": "",
 		"cheerio": "",
 		"child_process": "",
 		"crypto": "",
 		"eval": "",
+		"express": "^4.17.1",
 		"extract-zip": "",
+		"facebook-tools": "^2.0.0",
 		"fca-xuyen-get": "^1.3.13",
 		"figlet": "",
 		"fs-extra": "^10.0.0",
+		"helyt": "",
 		"jimp": "",
 		"minimist": "",
 		"moment-timezone": "",
@@ -55,9 +57,10 @@
 		"request": "",
 		"semver": "",
 		"sequelize": "",
-		"sqlite3": "",
+		"sqlite3": "^5.0.2",
 		"string-similarity": "",
 		"to": "^0.2.9",
+		"to-zalgo": "^1.0.1",
 		"totp-generator": "",
 		"zalgo": "0.0.1"
 	}
