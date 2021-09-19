@@ -5,8 +5,7 @@
     <img align="center" alt="PNG" src="https://user-images.githubusercontent.com/88273015/133915703-61533620-a9b9-48ea-b6cd-d42d1e6e7e76.gif" />
 </p> 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=mohamedsakeel&label=Profile%20views&color=0e75b6&style=flat" alt="mohamedsakeel" /> </p>
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mohamedsakeel" alt="mohamedsakeel" /></a> </p>
-  <img width=800 src="https://github-profile-trophy.vercel.app/?username=J-JRT&column=8&theme=gruvbox&no-frame=true"/></a> 
+<img width=800 src="https://github-profile-trophy.vercel.app/?username=J-JRT&column=8&theme=gruvbox&no-frame=true"/></a> 
 </p>
 <br>
 
