@@ -1,7 +1,7 @@
 const request = require('request');
 const fs = require('fs')
 module.exports.config = {
-  name: "tid",
+  name: "uidbox",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "HungCho",
