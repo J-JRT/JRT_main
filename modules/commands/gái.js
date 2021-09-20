@@ -2,7 +2,7 @@
   name: "gái",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "CallmeSun",
+  credits: "Mirai Team",
   description: "Random ảnh girl",
   commandCategory: "random-img",
   usages: "gái",
