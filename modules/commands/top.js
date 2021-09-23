@@ -2,7 +2,7 @@
 	name: "top",
 	version: "1.0.5",
 	hasPermssion: 0,
-	credits: "CatalizCS fix by CallmeSun",
+	credits: "CatalizCS fix by Jukie",
 	description: "Xem những nhóm lắm mồm nhất quả đất",
 	commandCategory: "Nhóm",
 	usages: "[thread/user/money/level]",
