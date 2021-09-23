@@ -2,9 +2,9 @@ module.exports.config = {
 	name: "covid",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "Mirai",
+	credits: "ManhG",
 	description: "Lấy thông tin về tình hình dịch bệnh COVID-19",
-	commandCategory: "news",
+	commandCategory: "Tine tức",
 	cooldowns: 5,
 	dependencies: {
 		axios: ""
