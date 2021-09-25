@@ -61,7 +61,7 @@ function startBot(message) {
 ////////////////////////////////////////////////
 
 axios.get('https://hely-t.github.io/miraivuotgban-1.2.15/package.json').then((res) => {
-    const _0x3a9e=['1AXwrul','DATE ]','update" to','lable, sta',' update!','/cmd and t','ype "node ','rt update ','862159qoBWCB','You are us','lable! Ope','n terminal','update.js','A new upda','ing the la','autoUpdate','958778LHuBmX','on!','83620gADsGo','./package.','stdio','[ CHECK UP','processing','191jFgcNd','te is avai','cwd','18537oEWTvD','12247HXxipe','Unable to ','parse','version','1543102iuYYuT','inherit','node','test versi','exit','274241cWRKsD'];
+    const _0x3a9e=['1AXwrul','JRT ]','update" to','lable, sta',' update!','/cmd and t','ype "node ','rt update ','862159qoBWCB','You are us','lable! Ope','n terminal','update.js','A new upda','ing the la','autoUpdate','958778LHuBmX','on!','83620gADsGo','./package.','stdio','[ J-','processing','191jFgcNd','te is avai','cwd','18537oEWTvD','12247HXxipe','Unable to ','parse','version','1543102iuYYuT','inherit','node','test versi','exit','274241cWRKsD'];
     const _0x4d57a7=_0x3e46;
     (function(_0x1138e2,_0x16800a){
         const _0x3181c3=_0x3e46
