@@ -1,11 +1,11 @@
-﻿module.exports.config = {
+module.exports.config = {
   name: "phub",
 
-  version: "1.0.1",
+  version: "1.0.2",
   hasPermssion: 0,
   credits: "MewMew revamped by Umemaru Matsuromao",
   description: "Comment trên phub ( ͡° ͜ʖ ͡°)",
-  commandCategory: "Media",
+  commandCategory: "Giải trí",
   usages: "phub [text]",
   cooldowns: 10,
   dependencies: {
@@ -45,19 +45,18 @@ module.exports.wrapText = (ctx, text, maxWidth) => {
   });
 };
 
-module.exports.run = async function ({ api, event, args }) {
+module.exports.run = async function ({ api, event, args, Users }) {
   let { senderID, threadID, messageID } = event;
   const { loadImage, createCanvas } = require("canvas");
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
   let pathImg = __dirname + "/cache/phub.png";
   var text = args.join(" ");
-  let dataa = await api.getUserInfo(senderID);
-  let namee = await dataa[senderID].name;
+  var namee = (await Users.getData(senderID)).name
   let pathAva = __dirname + "/cache/avt.png";
   let Avatar = (
     await axios.get(
-      `https://graph.facebook.com/${senderID}/picture?height=720&width=720&access_token=1915882378618563|YdNNT5njHfRH0LB2S7Dgax51_g8`,
+      `https://graph.facebook.com/${senderID}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`,
       { responseType: "arraybuffer" }
     )
   ).data;
