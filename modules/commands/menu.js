@@ -17,7 +17,7 @@ module.exports.languages = {
 	"vi": {
 		"moduleInfo": "☽♆☾%1☽♆☾\n%2\n\n🐳Cách sử dụng: %3\n🐳Thuộc nhóm: %4\n🐳Thời gian chờ: %5 giây(s)\n🐳Quyền hạn: %6\n\n🍁🍂🍁 Module code by %7 🍁🍂🍁",
 		"helpAll": '📌Hiện tại đang có %1 lệnh có thể sử dụng trên bot này\n🐳Sử dụng: ꧁%2help tên lệnh꧂\nđể xem chi tiết cách sử dụng"',
-		"helpList": '🍁🍁🍁BOT JRT🍁🍁🍁\n\n%2\n💟Hiện tại đang có %3 lệnh có thể sử dụng trên bot này\n🦋Hãy reply(phản hồi) STT\n🤖Bot được điều hành bởi Nguyễn Hải Đăng\n📩Mọi thắc mắc liên hệ Admin Bot\n📱Fb : https://fb.me/NHD.JRT262 📱Zalo : 0396049649\n🔰Dùng %4menu all để xem tất cả các lệnh\n🐳Chúc bạn sử dụng bot vui vẻ🔥',
+		"helpList": '🍁🍁🍁BOT JRT🍁🍁🍁\n\n%2\n💟Hiện tại đang có %3 lệnh có thể sử dụng trên bot này\n🦋Hãy reply(phản hồi) STT\n🤖Bot được điều hành bởi Nguyễn Hải Đăng\n📩Mọi thắc mắc liên hệ Admin Bot\n📱Fb : https://fb.me/NHD.JRT262\n📱Zalo : 0396049649\n🔰Dùng %4menu all để xem tất cả các lệnh\n🐳Chúc bạn sử dụng bot vui vẻ🔥',
 		"helpeply": '🍁%1🍁\nSau đây là nhóm lệnh của\n🍁%2🍁\n\n%3\n🔥Hãy reply(phản hồi) số thứ tự để xem chi tiết cách sử dụng!',
 		"user": "Người dùng",
         "adminGroup": "Quản trị viên nhóm",
