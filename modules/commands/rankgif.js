@@ -1,3 +1,4 @@
+//lấy 1 ảnh gif để dô cache đặt tên dưới dạng banner.gif thì lúc dùng nó mới hiện nhé
 module.exports.config = {
     name: "rankgif",
     version: "1.0.0",
