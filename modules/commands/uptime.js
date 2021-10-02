@@ -1,13 +1,14 @@
 module.exports.config = {
 	name: "uptime",
-	version: "1.0.2",
+	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "Mirai Team",
+	credits: "Mirai - JRT",
 	description: "Kiểm tra thời gian bot đã online",
-	commandCategory: "system",
+	commandCategory: "Hệ thống admin-bot",
 	cooldowns: 5,
 	dependencies: {
-		"pidusage": ""
+		"pidusage": "",
+		"fast-speedtest-api": ""
 	}
 };
 
@@ -18,23 +19,32 @@ function byte2mb(bytes) {
 	return `${n.toFixed(n < 10 && l > 0 ? 1 : 0)} ${units[l]}`;
 }
 
-module.exports.languages = {
-	"vi": {
-		"returnResult": "Bot đã hoạt động được %1 giờ %2 phút %3 giây.\n\n❯ Tổng người dùng: %4\n❯ Tổng Nhóm: %5\n❯ Cpu đang sử dụng: %6%\n❯ Ram đang sử dụng: %7\n❯ Ping: %8ms\n\n=== This bot was made by CatalizCS and SpermLord ==="
-	},
-	"en": {
-		"returnResult": "Bot has been working for %1 hour(s) %2 minute(s) %3 second(s).\n\n❯ Total users: %4\n❯ Total Threads: %5\n❯ Cpu usage: %6%\n❯ RAM usage: %7\n❯ Ping: %8ms\n\n=== This bot was made by CatalizCS and SpermLord ==="
-	}
-}
-
-module.exports.run = async ({ api, event, getText }) => {
-	const time = process.uptime(),
+module.exports.run = async ({ api, event,arg, Users }) => {
+	const axios = global.nodemodule["axios"];
+	const fast = global.nodemodule["fast-speedtest-api"];
+	const speedTest = new fast({
+			token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm",
+			verbose: false,
+			timeout: 10000,
+			https: true,
+			urlCount: 5,
+			bufferSize: 8,
+			unit: fast.UNITS.Mbps
+		});
+	const ketqua = await speedTest.getSpeed();
+  const request = require('request');
+	const res = await axios.get(`http://le31.glitch.me/poem`);
+  var love = res.data.data
+	const fs = require("fs");
+    let name = await Users.getNameUser(event.senderID)
+  const time = process.uptime(),
 		hours = Math.floor(time / (60 * 60)),
 		minutes = Math.floor((time % (60 * 60)) / 60),
 		seconds = Math.floor(time % 60);
-
-	const pidusage = await global.nodemodule["pidusage"](process.pid);
-
+  const pidusage = await global.nodemodule["pidusage"](process.pid);
+	const moment = require("moment-timezone");
+    var gio = moment.tz("Asia/Ho_Chi_Minh").format("D/MM/YYYY || HH:mm:ss");
 	const timeStart = Date.now();
-	return api.sendMessage("", event.threadID, () => api.sendMessage(getText("returnResult", hours, minutes, seconds, global.data.allUserID.length, global.data.allThreadID.length, pidusage.cpu.toFixed(1), byte2mb(pidusage.memory), Date.now() - timeStart), event.threadID, event.messageID));
+	let today = new Date();
+ return api.sendMessage("", event.threadID, () => api.sendMessage(`>Chào cậu: ${name}\>Hôm này là: ${gio}\>Bot của JRT đã hoạt động được: ${hours} giờ ${minutes} phút ${seconds} giây.\n>Prefix: ${global.config.PREFIX}\n>Version: 1.2.15\n>Tổng người dùng: ${global.data.allUserID.length}\n>Tổng Nhóm: ${global.data.allThreadID.length}\n>Cpu đang sử dụng: ${pidusage.cpu.toFixed(1)}\n>Ram đang sử dụng: ${byte2mb(pidusage.memory)}\n>Ping: ${Date.now() - timeStart}ms\n>Tốc độ mạng : ${ketqua} Mbs \n≻───── •👇🏻• ─────≺\n>Thính:\n${love}`, event.threadID, event.messageID));
 }
