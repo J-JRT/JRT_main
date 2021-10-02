@@ -4,7 +4,7 @@
  * @apikey Reg key tại: https://meewmeew.info/site
  */
 module.exports.config = {
-    name: "sim",
+    name: "sim2",
     version: "4.3.7",
     hasPermssion: 0,
     credits: "ProCoderMew",
