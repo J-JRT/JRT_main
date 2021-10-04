@@ -1,4 +1,5 @@
 //lấy 1 ảnh gif để dô cache đặt tên dưới dạng banner.gif thì lúc dùng nó mới hiện nhé
+//nhớ npm i xong rồi npm i canvas rồi npm audit fix rồi mà chạy nhé
 module.exports.config = {
     name: "rankgif",
     version: "1.0.0",
