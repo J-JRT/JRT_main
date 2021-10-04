@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "quiz",
-	version: "1.0.1",
-	credits: "Mirai Team mod by Jukie", //mod trans
+	version: "2.0.0",
+	credits: "Mirai Team mod by Jukie",
 	hasPermssion: 0,
 	description: "Trả lời câu hỏi",
 	commandCategory: "Giải trí",
@@ -14,9 +14,14 @@ module.exports.config = {
 module.exports.handleReaction = ({ api, event, handleReaction }) => {
 	if (!event.userID == handleReaction.author) return;
 	let response = "";
+	if (event.reaction != "👍" && event.reaction != "😢") return;
 	if (event.reaction == "👍") response = "True"
-	else response = "False";
-	if (response == handleReaction.answer) api.sendMessage("⚡️Bạn trả lời đúng rồi đấy!!!", event.threadID);
+	else if (event.reaction == "😢") response = "False";
+	if (response == handleReaction.answer) api.sendMessage("⚡️Bạn trả lời đúng rồi đấy!!!", event.threadID, () => {
+					
+					setTimeout(function(){ api.unsendMessage(handleReaction.messageID); }, 5000);
+				});
+
 	else api.sendMessage("⚡️Bạn trả lời sai rồi!!!", event.threadID);
 	const indexOfHandle = client.handleReaction.findIndex(e => e.messageID == handleReaction.messageID);
 	global.client.handleReaction.splice(indexOfHandle, 1);
