@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "2fa",
+	name: "get2fa",
 	version: "1.0.1",
 	hasPermssion: 0,
 	credits: "Jukie~",
@@ -16,4 +16,3 @@ const res = await axios.get(`https://2fa.live/tok/${code}`);
 var codee = res.data.token;
 return api.sendMessage(`⚡️Mã xác thực 2 yếu tố của bạn là: ${codee}`, event.threadID, event.messageID)
 }
-© 2021 GitHub, Inc.
