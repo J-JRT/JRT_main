@@ -27,7 +27,7 @@ module.exports.onLoad = async() => {
     const dirMaterial = __dirname + `/cache/canvas/`;
     const path = resolve(__dirname, 'cache/canvas', 'gay.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("http://imgur.com/a/EPH2Yq8.png", path);
+    if (!existsSync(path)) await downloadFile("https://i.ibb.co/jfsXY1c/image.png", path);
 }
 
 async function makeImage({ one, two }) {
@@ -42,10 +42,10 @@ async function makeImage({ one, two }) {
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
     
-    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: 'arraybuffer' })).data;
+    let getAvatarOne = (await axios.get(`https://le31.glitch.me/avt?q=${one}`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
     
-    let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: 'arraybuffer' })).data;
+    let getAvatarTwo = (await axios.get(`https://le31.glitch.me/avt?q=${two}`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
     
     let circleOne = await jimp.read(await circle(avatarOne));
