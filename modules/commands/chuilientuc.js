@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "tag",
+    name: "chuilientuc",
     version: "1.0.0",
     hasPermssion: 1,
     credits: "VanHung & Dựa trên demo của NTKhang ", //đi war
