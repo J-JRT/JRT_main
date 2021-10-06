@@ -1,4 +1,4 @@
-module.exports.config = {
+﻿module.exports.config = {
 	name: "leave",
 	eventType: ["log:unsubscribe"],
 	version: "1.0.0",
@@ -17,14 +17,14 @@ module.exports.run = async function({ api, event, Users, Threads }) {
 	const { threadID } = event;
 	const data = global.data.threadData.get(parseInt(threadID)) || (await Threads.getData(threadID)).data;
 	const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
-	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "tự rời" : "bị quản trị viên đá";
+	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "rời" : "và đã bị quản lí đuổi";
 	const path = join(__dirname, "cache", "leaveGif");
 	const gifPath = join(path, `${threadID}.gif`);
 	var msg, formPush
 
 	if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-	(typeof data.customLeave == "undefined") ? msg = "{name} Đã {type} khỏi nhóm" : msg = data.customLeave;
+	(typeof data.customLeave == "undefined") ? msg = "Cảm ơn cậu {name} đã đồng hành cùng chúng tôi trong thời gian qua💟" : msg = data.customLeave;
 	msg = msg.replace(/\{name}/g, name).replace(/\{type}/g, type);
 
 	if (existsSync(gifPath)) formPush = { body: msg, attachment: createReadStream(gifPath) }
