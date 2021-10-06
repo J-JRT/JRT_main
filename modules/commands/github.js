@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: "NTKhang",
 	description: "Lấy thông tin github của username",
 	commandCategory: "game",
-	dêpndencies: {"fetch": "","node-fetch": "", "moment": ""},
+	depndencies: {"fetch": "","node-fetch": "", "moment": ""},
 	usages: "github <username>",
 	cooldowns: 5
 };
