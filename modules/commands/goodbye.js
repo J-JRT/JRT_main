@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "ngủ",
+    name: "goodbye",
     version: "1.0.1",
     hasPermssion: 0,
     credits: "HTHB",
