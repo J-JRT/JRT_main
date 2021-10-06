@@ -15,28 +15,23 @@ module.exports.handleEvent = function({ api, event }) {
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
   if ((event.body.toLowerCase() == "bot ngu")) {
-    return api.sendMessage("Thành viên đã cố ý chửi bot, do đó đã vi phạm luật bot nên bot sẽ out và muốn add lại thì xin liên hệ qua admin qua Fb: Nguyễn Hải Đăng để được hỗ trợ\nLink fb nè: https://www.facebook.com/NHD.JRT.262", threadID, () =>
-      api.removeUserFromGroup(api.getCurrentUserID(), threadID));
+    return api.sendMessage("Ngu con mẹ mày😠", threadID);
   };
 
   if ((event.body.toLowerCase() == "bot out")) {
-    return api.sendMessage("Tạm biệt mng ><", threadID, () =>
-      api.removeUserFromGroup(api.getCurrentUserID(), threadID));
+    return api.sendMessage("Out cái lồn 😠", threadID);
   };
 
    if ((event.body.toLowerCase() == "bot cút")) {
-    return api.sendMessage("À ừ vậy thôi tao đi cảm ơn bọn mày trong thời gian qua cùng tao vui vẻ....vậy thôi tao đi pp ☺😊", threadID, () =>
-      api.removeUserFromGroup(api.getCurrentUserID(), threadID));
+    return api.sendMessage("Cút cc, mày cút trước đi😠", threadID);
   };
 
   if ((event.body.toLowerCase() == "bot lon")) {
-    return api.sendMessage("Thành viên đã cố ý chửi bot, do đó đã vi phạm luật bot nên bot sẽ out và muốn add lại thì xin liên hệ qua admin qua Fb: Nguyễn Hải Đăng để được hỗ trợ\nLink fb nè: https://www.facebook.com/NHD.JRT.262", threadID, () =>
-      api.removeUserFromGroup(api.getCurrentUserID(), threadID));
+    return api.sendMessage("Tao là bot đéo có lồn hay cặc gì nhé 😠", threadID);
   };
 
   if ((event.body.toLowerCase() == "bot óc chó")) {
-    return api.sendMessage("Thành viên đã cố ý chửi bot, do đó đã vi phạm luật bot nên bot sẽ out và muốn add lại thì xin liên hệ qua admin qua Fb: Nguyễn Hải Đăng để được hỗ trợ\nLink fb nè: https://www.facebook.com/NHD.JRT.262", threadID, () =>
-      api.removeUserFromGroup(api.getCurrentUserID(), threadID));
+    return api.sendMessage("Chó nào vừa nói xấu tao đấy, muốn chết hả😠", threadID);
   };
 
   if ((event.body.toLowerCase() == "bot chó") || (event.body.toLowerCase() == "bot chó")) {
