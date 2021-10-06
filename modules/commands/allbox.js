@@ -14,7 +14,7 @@ module.exports.run = function({ api, event, clientL }) {
 	api.getThreadList(100, null, ["INBOX"], (err, list) => {
 		list.forEach(info => {
 			if (info.isGroup && info.isSubscribed) {
-				box += `${num+=1}. ${info.name} \n ${info.threadID}\n`;
+				box += `${num+=1}. ${info.name} \n🔮TID: ${info.threadID}\n`;
 			}			
 		})
 		return api.sendMessage(box, event.threadID, event.messageID);
