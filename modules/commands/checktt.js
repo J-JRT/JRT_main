@@ -1,4 +1,5 @@
 var limit = 20; //số thành viên mỗi lần check
+//nên xóa data.sqlite ở include và npm i ... npm audit fix để tránh bị lỗi tên undefined
 module.exports.config = {
 	name: "checktt",
 	version: "1.8.0",
