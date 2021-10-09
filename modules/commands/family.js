@@ -50,7 +50,18 @@ module.exports.run = async ({ event, api, args, Threads }) => {
     const Canvas = global.nodemodule["canvas"];
   
 
-  function _0x52bc(){var _0x3bc743=['threadInfo','loadImage','senderID','push','threadID','3550210sTPuWp','81wgqkLF','4571zlSkPz','2183478DrjjNK','1185520hyIXql','2712WHFvPD','16190ZxjBNA','getData','36rSzQUN','filter','783160hiCeMZ','2546528gyZExl','participantIDs'];_0x52bc=function(){return _0x3bc743;};return _0x52bc();}var _0x22e5c2=_0x4f5d;function _0x4f5d(_0x4f918d,_0x11984e){var _0x52bc1b=_0x52bc();return _0x4f5d=function(_0x4f5d92,_0x39d499){_0x4f5d92=_0x4f5d92-0x188;var _0x174832=_0x52bc1b[_0x4f5d92];return _0x174832;},_0x4f5d(_0x4f918d,_0x11984e);}(function(_0x2526c2,_0x19600f){var _0x351d14=_0x4f5d,_0x5bc024=_0x2526c2();while(!![]){try{var _0x7dba14=-parseInt(_0x351d14('0x194'))/0x1*(-parseInt(_0x351d14(0x199))/0x2)+parseInt(_0x351d14(0x196))/0x3+parseInt(_0x351d14(0x18b))/0x4+parseInt(_0x351d14(0x197))/0x5+parseInt(_0x351d14('0x198'))/0x6*(parseInt(_0x351d14(0x195))/0x7)+-parseInt(_0x351d14('0x18c'))/0x8+-parseInt(_0x351d14(0x189))/0x9*(parseInt(_0x351d14('0x193'))/0xa);if(_0x7dba14===_0x19600f)break;else _0x5bc024['push'](_0x5bc024['shift']());}catch(_0x28acba){_0x5bc024['push'](_0x5bc024['shift']());}}}(_0x52bc,0x5b1b3));var {participantIDs,approvalMode,adminIDs}=(await Threads[_0x22e5c2('0x188')](event[_0x22e5c2('0x192')]))['threadInfo'],namebox=(await Threads[_0x22e5c2('0x188')](event[_0x22e5c2(0x192)]))[_0x22e5c2(0x18e)],arrad=[];for(let qtv of adminIDs){arrad[_0x22e5c2('0x191')](qtv['id']);};const background=await Canvas[_0x22e5c2('0x18f')]('https://i.ibb.co/xqrFW4N/Pics-Art-06-26-12-07-26.jpg'),botID=api['getCurrentUserID'](),idtv=event[_0x22e5c2(0x18d)][_0x22e5c2(0x18a)](_0x581581=>_0x581581!=botID&&_0x581581!=event[_0x22e5c2(0x190)]);
+    //var threadInfo = await api.getThreadInfo(threadID);
+    var { participantIDs, approvalMode, adminIDs } = (await Threads.getData(event.threadID)).threadInfo;
+    var namebox =  (await Threads.getData(event.threadID)).threadInfo;
+    var arrad = [];
+    for(let qtv of adminIDs) {
+      arrad.push(qtv.id)
+    };
+    const background = await Canvas.loadImage("https://i.ibb.co/xqrFW4N/Pics-Art-06-26-12-07-26.jpg");
+    
+    //var idtv = threadInfo.participantIDs;
+    //const botID = api.getCurrentUserID();
+    const idtv = event.participantIDs
   
     var xbground = background.width,
         ybground = background.height;
