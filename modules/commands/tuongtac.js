@@ -1,3 +1,4 @@
+//nên xóa data.sqlite ở include và npm i ... npm audit fix để tránh bị lỗi tên undefined
 module .exports .config = {
     name: "tuongtac",
     version: "1.8.0",
