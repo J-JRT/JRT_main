@@ -4,7 +4,7 @@
  * @apikey Reg key tại: https://meewmeew.info/site
  */
 module.exports.config = {
-    name: "sim2",
+    name: "sim",
     version: "4.3.7",
     hasPermssion: 0,
     credits: "ProcodeMew", //change api sim Hoang Giap
