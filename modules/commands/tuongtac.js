@@ -1,13 +1,13 @@
 //nên xóa data.sqlite ở include và npm i ... npm audit fix để tránh bị lỗi tên undefined
 module .exports .config = {
-    name: "tuongtac",
-    version: "1.8.0",
-    hasPermssion: 0,
-    credits: "Mirai Team fix get by D-Jukie",
-    description: "Kiểm tra lượt tương tác trong nhóm",
-    commandCategory: "Nhóm",
-    usages: "[all/tag]",
-    cooldowns: 5
+	name: "checktt",
+	version: "1.7.0",
+	hasPermssion: 0,
+	credits: "Mirai Team fix get by D-Jukie",
+	description: "Kiểm tra lượt tương tác trong nhóm",
+	commandCategory: "Nhóm",
+	usages: "[all/tag]",
+	cooldowns: 5
 };
 
 module.exports.languages = {
@@ -26,10 +26,7 @@ if (args[0] == "all") {
             const listUserID = event.participantIDs
             var id = listUserID //[Math.floor(Math.random() * listUserID.length)];
             var number = 1, msg = "", storage = [], exp = [];
-
-           
             for(const idUser of listUserID) {
-
             const countMess = await Currencies.getData(idUser);
             exp.push({"name" : (typeof ((await Users.getData(idUser)).name) == "undefined") ? 0 : (await Users.getData(idUser)).name, "exp": (typeof countMess.exp == "undefined") ? 0 : countMess.exp, "uid": idUser});
         }
@@ -40,7 +37,9 @@ if (args[0] == "all") {
             return api.sendMessage(`🌻Độ tương tác trong box🌻\n\n` + msg + `\n🌻Chúc mọi người tương tác vui vẻ🌻`, event.threadID);
 
 }
-    else if (mention[0]) {
+    else 
+    if(event.type == "message_reply") { mention[0] = event.messageReply.senderID }
+    if (mention[0]) {
             var { participantIDs } =(await Threads.getData(event.threadID)).threadInfo;
             //const countMess = (await Currencies.getData(event.senderID)).exp
             const listUserID = event.participantIDs
