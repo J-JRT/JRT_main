@@ -4,7 +4,7 @@
 */
 const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
-  name: "autobanv2",
+  name: "autoban",
   version: "1.1.0",
   hasPermssion: 0,
   credits: "⚡D-Jukie",
