@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "fixspam-chuibot",
+    name: "fixspam",
     version: "1.0.0",
     hasPermssion: 0,
     credits: "ManhG",
