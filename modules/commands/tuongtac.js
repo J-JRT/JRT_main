@@ -1,6 +1,6 @@
 //nên xóa data.sqlite ở include và npm i ... npm audit fix để tránh bị lỗi tên undefined
 module .exports .config = {
-	name: "checktt",
+	name: "",
 	version: "1.7.0",
 	hasPermssion: 0,
 	credits: "Mirai Team fix get by D-Jukie",
