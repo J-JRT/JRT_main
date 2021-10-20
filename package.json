@@ -1,7 +1,7 @@
 {
-	"name": "miraiBot",
+	"name": "MiraiVuotGBan",
 	"version": "1.2.15",
-	"description": "A simple Facebook Messenger Bot made by me(CatalizCS) and my brother SpermLord.",
+	"description": "Đây là 1 bản cài đặt bot cho messenger của bạn ngày càng thêm thú vị hơn",
 	"main": "mirai.js",
 	"scripts": {
 		"start": "node index",
