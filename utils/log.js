@@ -3,10 +3,10 @@ const chalk = require('chalk');
 module.exports = (data, option) => {
 	switch (option) {
 		case "warn":
-			console.log(chalk.yellow('[ ❕ Lỗi ] » ') + data);
+			console.log(chalk.yellow('[ ❕ Lỗi rồi ] » ') + data);
 			break;
 		case "error":
-			console.log(chalk.red('[ ❕ Lỗi ] » ') + data);
+			console.log(chalk.red('[ ❕ Lỗi rồi ] » ') + data);
 			break;
 		default:
 			console.log(chalk.magenta(`${option} » `) + data);
@@ -17,13 +17,13 @@ module.exports = (data, option) => {
 module.exports.loader = (data, option) => {
 	switch (option) {
 		case "warn":
-			console.log(chalk.yellow('[ OREO ] » ') + data);
+			console.log(chalk.yellow('[ J-JRT ] » ') + data);
 			break;
 		case "error":
-			console.log(chalk.red('[ OREO ] » ') + data);
+			console.log(chalk.red('[ J-JRT ] » ') + data);
 			break;
 		default:
-			console.log(chalk.green(`[ OREO ] » `) + data);
+			console.log(chalk.green(`[ J-JRT ] » `) + data);
 			break;
 	}
 }
