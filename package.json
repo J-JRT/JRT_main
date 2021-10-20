@@ -1,5 +1,5 @@
 {
-	"name": "MiraiXuyenGet-JRT",
+	"name": "miraiBot",
 	"version": "1.2.15",
 	"description": "A simple Facebook Messenger Bot made by me(CatalizCS) and my brother SpermLord.",
 	"main": "mirai.js",
@@ -29,7 +29,6 @@
 	},
 	"homepage": "https://github.com/miraipr0ject/miraiv2#readme",
 	"dependencies": {
-		"helyt": "",
 		"@miraipr0ject/assets": "",
 		"axios": "",
 		"body-parser": "",
@@ -41,24 +40,21 @@
 		"crypto": "",
 		"eval": "",
 		"extract-zip": "",
-		"fca-xuyen-get": "^1.3.13",
+		"@maihuybao/fca-unofficial": "",
 		"figlet": "",
-		"fs-extra": "^10.0.0",
+		"fs-extra": "",
 		"jimp": "",
 		"minimist": "",
 		"moment-timezone": "",
 		"ms": "",
 		"npmlog": "",
 		"path": "",
-		"pm2": "^5.1.0",
 		"readline": "",
 		"request": "",
 		"semver": "",
 		"sequelize": "",
 		"sqlite3": "",
 		"string-similarity": "",
-		"to": "^0.2.9",
-		"totp-generator": "",
-		"zalgo": "0.0.1"
+		"totp-generator": ""
 	}
 }
