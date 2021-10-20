@@ -32,8 +32,8 @@ module.exports.handleEvent = function ({ api, event }) {
 }
 
 module.exports.run = function({ api, event, args }) {
-	  var a = function (a) { api.sendMessage(a, event.threadID); }
-a("[💟] Đã Gửi Toàn Bộ Lệnh Tới Bạn UwU. [❗]\nVui Lòng Check Tin Nhắn Chờ Hoặc Spam Đi Nhé [❗]");
+    var a = function (a) { api.sendMessage(a, event.threadID); }
+a("[💟] Đây Là Toàn Bộ Lệnh Có Trong File Bot UwU. [❗]\n🔰Vui Lòng Không Spam Hoặc Chửi Bot Bất Kì Dưới Hình Thức Nào Nhé [❗]");
 	const { commands } = global.client;
 	const { threadID, messageID } = event;
 	const command = commands.get((args[0] || "").toLowerCase());
@@ -46,13 +46,11 @@ a("[💟] Đã Gửi Toàn Bộ Lệnh Tới Bạn UwU. [❗]\nVui Lòng Check T
 			if (!group.some(item => item.group.toLowerCase() == commandConfig.config.commandCategory.toLowerCase())) group.push({ group: commandConfig.config.commandCategory.toLowerCase(), cmds: [commandConfig.config.name] });
 			else group.find(item => item.group.toLowerCase() == commandConfig.config.commandCategory.toLowerCase()).cmds.push(commandConfig.config.name);
 		}
-		group.forEach(commandGroup => msg += `🍁🍁🍁 ${commandGroup.group.charAt(0).toUpperCase() + commandGroup.group.slice(1)} 🍁🍁🍁\n${commandGroup.cmds.join('- ')}\n\n`);
-		
-		return api.sendMessage(msg + `🍑🍒🦋Sử dụng: "${(threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX}help từng lệnh ở trên" để xem chi tiết cách sử dụng!\n✅Hiện tại đang có ${commands.size} lệnh có thể sử dụng trên bot này\n🤖Bot được điều hành bởi Nguyễn Hải Đăng.\n📩Mọi thắc mắc liên hệ Admin Bot \n📱Fb : https://fb.me/NHD.JRT262 \n📱Zalo : 0396049649 \n🔰Chúc bạn sử dụng bot vui vẻ ♥\n📣Menu sẽ tự động gỡ sau 60s🍑🍒🦋`, event.senderID, (err, info) =>
-        setTimeout(() => {api.unsendMessage(info.messageID) } , 60000));
-
+		group.forEach(commandGroup => msg += `🍁🍁🍁 ${commandGroup.group.charAt(0).toUpperCase() + commandGroup.group.slice(1)} 🍁🍁🍁\n${commandGroup.cmds.join(' - ')}\n\n`);
+		return api.sendMessage(msg + `🍑🍒🦋Sử dụng: "${(threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX}help từng lệnh ở trên" để xem chi tiết cách sử dụng!\n✅Hiện tại đang có ${commands.size} lệnh có thể sử dụng trên bot này\n🤖Bot được điều hành bởi Nguyễn Hải Đăng.\n📩Mọi thắc mắc liên hệ Admin Bot \n📱Fb : https://fb.me/NHD.JRT262 \n📱Zalo : 0396049649 \n🔰Chúc bạn sử dụng bot vui vẻ ♥\n📣Menu sẽ tự động gỡ sau 60s🍑🍒🦋`, event.threadID , (err, info)  => setTimeout ( () => { api.unsendMessage(info.messageID) } , 60000))
 
 	}
+
 	const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
 
 	return api.sendMessage(`⇚ ${command.config.name} ⇛\n${command.config.description}\n\n🌹 Cách sử dụng: ${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}\n🦋 Thuộc nhóm: ${command.config.commandCategory}\n⏰ Thời gian chờ: ${command.config.cooldowns} giây(s)\n👀 Quyền hạn: ${((command.config.hasPermssion == 0) ? "Người dùng" : (command.config.hasPermssion == 1) ? "Quản trị viên" : "Người vận hành bot" )}\n\n﷼ Module code by ${command.config.credits} ﷼`, threadID, messageID);
