@@ -31,8 +31,6 @@ module.exports.languages = {
 }
 
 module.exports.handleEvent = function ({ api, event, getText }) {
-  var a = function (a) { api.sendMessage(a, event.threadID); }
-a("[💟] Đây Là Toàn Bộ Lệnh Có Trong File Bot UwU. [❗]\n🔰Vui Lòng Không Spam Hoặc Chửi Bot Bất Kì Dưới Hình Thức Nào Nhé [❗]");
 	const { commands } = global.client;
 	const { threadID, messageID, body } = event;
 
