@@ -1,44 +1,58 @@
 module.exports.config = {
 	name: "help",
-	version: "1.0.1",
+	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "Mirai Team",
 	description: "Hướng dẫn cho người mới",
 	commandCategory: "Danh sách lệnh",
 	usages: "[Tên module]",
-	cooldowns: 5
+	cooldowns: 5,
+	envConfig: {
+		autoUnsend: true,
+		delayUnsend: 60
+	}
 };
 
-module.exports.handleEvent = function ({ api, event }) {
-	const { commands } = global.client;
-	
-	if (!event.body) return;
-
-	const { threadID, messageID, body } = event;
-
-	if (body.indexOf("help") != 0) return;
-
-	const splitBody = body.slice(body.indexOf("help")).trim().split(/\s+/);
-
-
-	if (splitBody.length == 1 || !commands.has(splitBody[1].toLowerCase())) return;
-
-	const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
-	const command = commands.get(splitBody[1].toLowerCase());
-
-	const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
-
-	return api.sendMessage(`⇚ ${command.config.name} ⇛\n${command.config.description}\n\n🌹 Cách sử dụng: ${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}\n🦋 Thuộc nhóm: ${command.config.commandCategory}\n⏰ Thời gian chờ: ${command.config.cooldowns} giây(s)\n👀 Quyền hạn: ${((command.config.hasPermssion == 0) ? "Người dùng" : (command.config.hasPermssion == 1) ? "Quản trị viên" : "Người vận hành bot" )}\n\n﷼ Module code by ${command.config.credits} ﷼`, threadID, messageID);
+module.exports.languages = {
+	"vi": {
+		"moduleInfo": "🔰 %1 🔰\n%2\n\n❤️ Cách sử dụng: %3\n💟 Thuộc nhóm: %4\n💓 Thời gian chờ: %5 giây(s)\n💕 Quyền hạn: %6\n\n💥💢💥 %7 💥💢💥",
+		"helpList": '≻─────── •👇🏻• ───────≺\n🏰🏰🏰 Hiện tại đang có %1 lệnh có thể sử dụng trên bot này\n🌟Sử dụng: "%2help nameCommand" lệnh có thể sử dụng trên bot này\n🤖Bot được điều hành bởi Nguyễn Hải Đăng.\n🔰Chúc bạn sử dụng bot vui vẻ ♥\n📣Help sẽ tự động gỡ sau 60s 🏯🏯🏯',
+		"user": "Người dùng",
+        "adminGroup": "Quản trị viên nhóm",
+        "adminBot": "Quản trị viên bot"
+	},
+	"en": {
+		"moduleInfo": "「 %1 」\n%2\n\n❯ Usage: %3\n❯ Category: %4\n❯ Waiting time: %5 seconds(s)\n❯ Permission: %6\n\n» Module code by %7 «",
+		"helpList": '[ There are %1 commands on this bot, Use: "%2help nameCommand" to know how to use! ]',
+		"user": "User",
+        "adminGroup": "Admin group",
+        "adminBot": "Admin bot"
+	}
 }
 
-module.exports.run = function({ api, event, args }) {
-    var a = function (a) { api.sendMessage(a, event.threadID); }
+module.exports.handleEvent = function ({ api, event, getText }) {
+  var a = function (a) { api.sendMessage(a, event.threadID); }
 a("[💟] Đây Là Toàn Bộ Lệnh Có Trong File Bot UwU. [❗]\n🔰Vui Lòng Không Spam Hoặc Chửi Bot Bất Kì Dưới Hình Thức Nào Nhé [❗]");
+	const { commands } = global.client;
+	const { threadID, messageID, body } = event;
+
+	if (!body || typeof body == "undefined" || body.indexOf("help") != 0) return;
+	const splitBody = body.slice(body.indexOf("help")).trim().split(/\s+/);
+	if (splitBody.length == 1 || !commands.has(splitBody[1].toLowerCase())) return;
+	const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
+	const command = commands.get(splitBody[1].toLowerCase());
+	const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
+	return api.sendMessage(getText("moduleInfo", command.config.name, command.config.description, `${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}`, command.config.commandCategory, command.config.cooldowns, ((command.config.hasPermssion == 0) ? getText("user") : (command.config.hasPermssion == 1) ? getText("adminGroup") : getText("adminBot")), command.config.credits), threadID, messageID);
+}
+
+module.exports.run = function({ api, event, args, getText }) {
 	const { commands } = global.client;
 	const { threadID, messageID } = event;
 	const command = commands.get((args[0] || "").toLowerCase());
 	const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
-	
+	const { autoUnsend, delayUnsend } = global.configModule[this.config.name];
+	const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
+
 	if (!command) {
 		const command = commands.values();
 		var group = [], msg = "";
@@ -46,12 +60,15 @@ a("[💟] Đây Là Toàn Bộ Lệnh Có Trong File Bot UwU. [❗]\n🔰Vui Lò
 			if (!group.some(item => item.group.toLowerCase() == commandConfig.config.commandCategory.toLowerCase())) group.push({ group: commandConfig.config.commandCategory.toLowerCase(), cmds: [commandConfig.config.name] });
 			else group.find(item => item.group.toLowerCase() == commandConfig.config.commandCategory.toLowerCase()).cmds.push(commandConfig.config.name);
 		}
-		group.forEach(commandGroup => msg += `🍁🍁🍁 ${commandGroup.group.charAt(0).toUpperCase() + commandGroup.group.slice(1)} 🍁🍁🍁\n${commandGroup.cmds.join(' - ')}\n\n`);
-		return api.sendMessage(msg + `🍑🍒🦋Sử dụng: "${(threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX}help từng lệnh ở trên" để xem chi tiết cách sử dụng!\n✅Hiện tại đang có ${commands.size} lệnh có thể sử dụng trên bot này\n🤖Bot được điều hành bởi Nguyễn Hải Đăng.\n📩Mọi thắc mắc liên hệ Admin Bot \n📱Fb : https://fb.me/NHD.JRT262 \n📱Zalo : 0396049649 \n🔰Chúc bạn sử dụng bot vui vẻ ♥\n📣Menu sẽ tự động gỡ sau 60s🍑🍒🦋`, event.threadID , (err, info)  => setTimeout ( () => { api.unsendMessage(info.messageID) } , 60000))
+		group.forEach(commandGroup => msg += `≻─────── •⁂• ───────≺\n🏙️🏙️🏙️ ${commandGroup.group.charAt(0).toUpperCase() + commandGroup.group.slice(1)} 🏩🏩🏩\n${commandGroup.cmds.join(' • ')}\n\n`);
+		return api.sendMessage(msg + getText("helpList", commands.size, prefix), threadID, async (error, info) =>{
+			if (autoUnsend) {
+				await new Promise(resolve => setTimeout(resolve, delayUnsend * 60000));
+				return api.unsendMessage(info.messageID);
+			} else return;
+		});
 
 	}
 
-	const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
-
-	return api.sendMessage(`⇚ ${command.config.name} ⇛\n${command.config.description}\n\n🌹 Cách sử dụng: ${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}\n🦋 Thuộc nhóm: ${command.config.commandCategory}\n⏰ Thời gian chờ: ${command.config.cooldowns} giây(s)\n👀 Quyền hạn: ${((command.config.hasPermssion == 0) ? "Người dùng" : (command.config.hasPermssion == 1) ? "Quản trị viên" : "Người vận hành bot" )}\n\n﷼ Module code by ${command.config.credits} ﷼`, threadID, messageID);
+	return api.sendMessage(getText("moduleInfo", command.config.name, command.config.description, `${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}`, command.config.commandCategory, command.config.cooldowns, ((command.config.hasPermssion == 0) ? getText("user") : (command.config.hasPermssion == 1) ? getText("adminGroup") : getText("adminBot")), command.config.credits), threadID, messageID);
 }
