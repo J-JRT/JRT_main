@@ -1,9 +1,10 @@
+const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
 	name: "rank",
 	version: "1.0.0",
 	hasPermssion: 0,
 	credits: "Siêu Đáng Yêu",
-	description: "Lấy rank hiện tại của bạn trên hệ thống bot kèm khung theo level của bạn, remake rank_card from canvacord",
+	description: "Rank được kèm theo ảnh ngẫu nhiên ><, tự tải ảnh về khi load rank này",
 	commandCategory: "Nhóm",
 	cooldowns: 5,
 	dependencies: {
@@ -14,6 +15,18 @@ module.exports.config = {
 		"canvas": ""
 	}
 };
+
+module.exports.onLoad = () => {
+    const fs = require("fs-extra");
+    const request = require("request");
+    const dirMaterial = __dirname + `/cache/`;
+    if (!fs.existsSync(dirMaterial + "cache")) fs.mkdirSync(dirMaterial, { recursive: true });
+    if (!fs.existsSync(dirMaterial + "rankcard1.png")) request("https://i.imgur.com/ciPIvFk.png").pipe(fs.createWriteStream(dirMaterial + "rankcard1.png"));
+    if (!fs.existsSync(dirMaterial + "rankcard2.png")) request("https://i.imgur.com/8ghhGmd.png").pipe(fs.createWriteStream(dirMaterial + "rankcard2.png"));
+    if (!fs.existsSync(dirMaterial + "rankcard3.png")) request("https://i.imgur.com/y9To0p6.png").pipe(fs.createWriteStream(dirMaterial + "rankcard3.png"));
+	//muốn thêm ảnh thì cứ làm như trên nhé lên web ibb.co hoặc i.imgur.com để up ảnh rồi lấy đường link add dô như vậy là tự tải ảnh về cache nhé!!!! tối đa 30 ảnh
+}
+module.exports.run = function({ api, event, client, __GLOBAL }) { }
 //random color 
 function getRandomColor() {
   	var letters = '0123456789ABCDEF';
@@ -23,6 +36,7 @@ function getRandomColor() {
   }
   return color;
 }
+
 
 module.exports.makeRankCard = async (data) => {    
     /*
@@ -53,7 +67,7 @@ module.exports.makeRankCard = async (data) => {
 //random rankcard by Siêu Đáng Yêu ,png by ngô đức hiển(xin vui lòng giữ credit)
 	const pathCustom = path.resolve(__dirname, "cache", "customrank");
 	var customDir = fs.readdirSync(pathCustom);
-	let random = Math.floor(Math.random() * 1) + 1;
+	let random = Math.floor(Math.random() * 30) + 1;
 	    var dirImage = __root + "/rankcard" + random + ".png";
 
 
@@ -178,6 +192,7 @@ module.exports.run = async ({ event, api, args, Currencies, Users }) => {
 	
 	let dataAll = (await Currencies.getAll(["userID", "exp"]));
 	const mention = Object.keys(event.mentions);
+  const name = global.data.userName.get(event.senderID) || await Users.getNameUser
 
 	dataAll.sort((a, b) => {
 		if (a.exp > b.exp) return -1;
@@ -191,7 +206,7 @@ module.exports.run = async ({ event, api, args, Currencies, Users }) => {
 		const point = await this.getInfo(event.senderID, Currencies);
 		const timeStart = Date.now();
 		let pathRankCard = await this.makeRankCard({ id: event.senderID, name, rank, ...point })
-		return api.sendMessage({body: `${Date.now() - timeStart}`, attachment: fs.createReadStream(pathRankCard, {'highWaterMark': 128 * 1024}) }, event.threadID, () => fs.unlinkSync(pathRankCard), event.messageID);
+		return api.sendMessage({body: `👑Tên: ${name}\n🏆Top ${rank}`, attachment: fs.createReadStream(pathRankCard, {'highWaterMark': 128 * 1024}) }, event.threadID, () => fs.unlinkSync(pathRankCard), event.messageID);
 	}
 	if (mention.length == 1) {
 		const rank = dataAll.findIndex(item => parseInt(item.userID) == parseInt(mention[0])) + 1;
