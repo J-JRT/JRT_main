@@ -1,4 +1,4 @@
-const fs = global.nodemodule["fs-extra"];
+﻿const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
 	name: "rank",
 	version: "1.0.0",
@@ -16,17 +16,18 @@ module.exports.config = {
 	}
 };
 
-module.exports.onLoad = () => {
-    const fs = require("fs-extra");
-    const request = require("request");
-    const dirMaterial = __dirname + `/cache/`;
-    if (!fs.existsSync(dirMaterial + "cache")) fs.mkdirSync(dirMaterial, { recursive: true });
-    if (!fs.existsSync(dirMaterial + "rankcard1.png")) request("https://i.imgur.com/ciPIvFk.png").pipe(fs.createWriteStream(dirMaterial + "rankcard1.png"));
-    if (!fs.existsSync(dirMaterial + "rankcard2.png")) request("https://i.imgur.com/8ghhGmd.png").pipe(fs.createWriteStream(dirMaterial + "rankcard2.png"));
-    if (!fs.existsSync(dirMaterial + "rankcard3.png")) request("https://i.imgur.com/y9To0p6.png").pipe(fs.createWriteStream(dirMaterial + "rankcard3.png"));
-	//muốn thêm ảnh thì cứ làm như trên nhé lên web ibb.co hoặc i.imgur.com để up ảnh rồi lấy đường link add dô như vậy là tự tải ảnh về cache nhé!!!! tối đa 30 ảnh
+module.exports.onLoad = async function () {
+	const { resolve } = global.nodemodule["path"];
+    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
+    const { downloadFile } = global.utils;
+	const path = resolve(__dirname, "cache" );
+    if (!existsSync(path)) mkdirSync(path, { recursive: true });
+	if (!existsSync(resolve(__dirname, 'cache', 'rankcard1.png'))) await downloadFile ("https://i.imgur.com/ciPIvFk.png", resolve(__dirname, 'cache', 'rankcard1.png'));
+  if (!existsSync(resolve(__dirname, 'cache', 'rankcard2.png'))) await downloadFile("https://i.imgur.com/8ghhGmd.png", resolve(__dirname, 'cache', 'rankcard2.png'));
+  if (!existsSync(resolve(__dirname, 'cache', 'rankcard3.png'))) await downloadFile("https://i.imgur.com/y9To0p6.png", resolve(__dirname, 'cache', 'rankcard3.png'));
+  //muốn thêm ảnh thì cứ làm như trên nhé lên web ibb.co hoặc i.imgur.com để up ảnh rồi lấy đường link add dô như vậy là tự tải ảnh về cache nhé!!!! tối đa 30 ảnh
 }
-module.exports.run = function({ api, event, client, __GLOBAL }) { }
+
 //random color 
 function getRandomColor() {
   	var letters = '0123456789ABCDEF';
@@ -67,7 +68,7 @@ module.exports.makeRankCard = async (data) => {
 //random rankcard by Siêu Đáng Yêu ,png by ngô đức hiển(xin vui lòng giữ credit)
 	const pathCustom = path.resolve(__dirname, "cache", "customrank");
 	var customDir = fs.readdirSync(pathCustom);
-	let random = Math.floor(Math.random() * 30) + 1;
+	let random = Math.floor(Math.random() * 3) + 1;
 	    var dirImage = __root + "/rankcard" + random + ".png";
 
 
@@ -172,19 +173,6 @@ module.exports.getInfo = async (uid, Currencies) => {
 	const expCurrent = point - this.levelToExp(level);
 	const expNextLevel = this.levelToExp(level + 1) - this.levelToExp(level);
 	return { level, expCurrent, expNextLevel };
-}
-
-module.exports.onLoad = async function () {
-	const { resolve } = global.nodemodule["path"];
-    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
-    const { downloadFile } = global.utils;
-	const path = resolve(__dirname, "cache", "customrank");
-    if (!existsSync(path)) mkdirSync(path, { recursive: true });
-//hàm dowload file có sẵn bao gồm font chữ hoặc pang rankcard (có thể thay)
-    if (!existsSync(resolve(__dirname, 'cache', 'regular-font.ttf'))) await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/fonts/regular-font.ttf", resolve(__dirname, 'cache', 'regular-font.ttf'));
-	if (!existsSync(resolve(__dirname, 'cache', 'bold-font.ttf'))) await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/fonts/bold-font.ttf", resolve(__dirname, 'cache', 'bold-font.ttf'));
-	if (!existsSync(resolve(__dirname, 'cache', 'rankcard.png'))) await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/rank_card/rankcard.png", resolve(__dirname, 'cache', 'rankcard.png'));
-
 }
 
 module.exports.run = async ({ event, api, args, Currencies, Users }) => {
