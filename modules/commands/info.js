@@ -1,1 +1,77 @@
-function _0x277f(){var _0x36094b=['Chưa\x20kết\x20hôn','url_profile','follow_user','info','birthday','gender','Không\x20công\x20khai','join','\x0a🏙️Nơi\x20ở\x20hiện\x20tại:\x20','8070744VzBNar','exports','D-Jukie','44765pVFzpg','\x0a📌Profile:\x20','Nam','createWriteStream','indexOf','/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9','516HkEyGP','2120xMYuwi','threadID','mentions','\x0a🏡Quê\x20quán:\x20','sendMessage','1751016QeayrW','1.0.0','messageID','pipe','2889lsCZeu','fullname','nodemodule','senderID','data','male','message_reply','Nữ','request','5363361NgsfYj','\x0a💍Tình\x20trạng\x20mối\x20quan\x20hệ:\x20','\x0a💟Sinh\x20nhật:\x20','11461050KmvntG','/cache/1.png','7WCHrTR','user_love','type','fs-extra','[reply/tag/id]','33CcIKPf','Thông\x20tin','keys','\x0a🌟Giới\x20tính:\x20','createReadStream','442271KqjabI','unlinkSync','https://simsimi.info/v2/info_user_facebook.php?api_key=leanhtruong&id=','axios','config','\x0a🏵️UIDFacebook:\x20','close','2ZrPZUg','female','Xem\x20thông\x20tin\x20của\x20người\x20dùng\x20facebook','https://graph.facebook.com/','location','get','\x0a🔥Follow:\x20','hometown','🔰Tên\x20Facebook:\x20','messageReply'];_0x277f=function(){return _0x36094b;};return _0x277f();}function _0x5ab0(_0x3daa02,_0x126eb5){var _0x277fd2=_0x277f();return _0x5ab0=function(_0x5ab031,_0x2833f4){_0x5ab031=_0x5ab031-0x8a;var _0x417d6a=_0x277fd2[_0x5ab031];return _0x417d6a;},_0x5ab0(_0x3daa02,_0x126eb5);}var _0x2ff385=_0x5ab0;(function(_0x56346e,_0x1ee6b9){var _0x1c0844=_0x5ab0,_0x1dc55e=_0x56346e();while(!![]){try{var _0x11941d=-parseInt(_0x1c0844(0xb3))/0x1*(-parseInt(_0x1c0844(0xba))/0x2)+parseInt(_0x1c0844(0x9b))/0x3*(parseInt(_0x1c0844(0x92))/0x4)+parseInt(_0x1c0844(0x8b))/0x5*(-parseInt(_0x1c0844(0x91))/0x6)+-parseInt(_0x1c0844(0xa9))/0x7*(-parseInt(_0x1c0844(0x97))/0x8)+-parseInt(_0x1c0844(0xa4))/0x9+-parseInt(_0x1c0844(0xa7))/0xa+-parseInt(_0x1c0844(0xae))/0xb*(-parseInt(_0x1c0844(0xcd))/0xc);if(_0x11941d===_0x1ee6b9)break;else _0x1dc55e['push'](_0x1dc55e['shift']());}catch(_0x277b61){_0x1dc55e['push'](_0x1dc55e['shift']());}}}(_0x277f,0xa5570),module[_0x2ff385(0xce)][_0x2ff385(0xb7)]={'name':_0x2ff385(0xc7),'version':_0x2ff385(0x98),'hasPermssion':0x0,'credits':_0x2ff385(0x8a),'description':_0x2ff385(0xbc),'commandCategory':_0x2ff385(0xaf),'usages':_0x2ff385(0xad),'cooldowns':0x3},module[_0x2ff385(0xce)]['run']=async({api:_0x549128,event:_0x4c9079,args:_0x6c23e4})=>{var _0x8f44b=_0x2ff385;const _0x51281f=global[_0x8f44b(0x9d)][_0x8f44b(0xac)],_0x13ea46=global[_0x8f44b(0x9d)][_0x8f44b(0xa3)],_0x31601e=global['nodemodule'][_0x8f44b(0xb6)];if(!_0x6c23e4[0x0]){if(_0x4c9079[_0x8f44b(0xab)]==_0x8f44b(0xa1))uid=_0x4c9079[_0x8f44b(0xc3)][_0x8f44b(0x9e)];else uid=_0x4c9079[_0x8f44b(0x9e)];const _0x2a8f80=await _0x31601e[_0x8f44b(0xbf)]('https://simsimi.info/v1/info_user_facebook.php?api_key=leanhtruong&id='+uid);var _0x10f894=_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xc9)]==_0x8f44b(0xa0)?'Nam':_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xc9)]==_0x8f44b(0xbb)?_0x8f44b(0xa2):_0x8f44b(0xca),_0x349ff8=_0x2a8f80[_0x8f44b(0x9f)]['birthday']?''+_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xc8)]:'Không\x20công\x20khai',_0x49809e=_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xaa)]?''+_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xaa)]:'Chưa\x20kết\x20hôn',_0x1f5dff=_0x2a8f80[_0x8f44b(0x9f)]['location']?''+_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xbe)]:_0x8f44b(0xca),_0x296dff=_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xc1)]?''+_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0xc1)]:_0x8f44b(0xca),_0x3e0c5f=()=>_0x549128[_0x8f44b(0x96)]({'body':_0x8f44b(0xc2)+_0x2a8f80[_0x8f44b(0x9f)][_0x8f44b(0x9c)]+'\x0a🏵️UIDFacebook:\x20'+uid+'\x0a🔥Follow:\x20'+_0x2a8f80['data'][_0x8f44b(0xc6)]+_0x8f44b(0xb1)+_0x10f894+_0x8f44b(0xa6)+_0x349ff8+'\x0a💍Tình\x20trạng\x20mối\x20quan\x20hệ:\x20'+_0x49809e+_0x8f44b(0xcc)+_0x1f5dff+_0x8f44b(0x95)+_0x296dff+_0x8f44b(0x8c)+_0x2a8f80[_0x8f44b(0x9f)]['url_profile'],'attachment':_0x51281f[_0x8f44b(0xb2)](__dirname+_0x8f44b(0xa8))},_0x4c9079[_0x8f44b(0x93)],()=>_0x51281f[_0x8f44b(0xb4)](__dirname+_0x8f44b(0xa8)),_0x4c9079[_0x8f44b(0x99)]);return _0x13ea46(encodeURI(_0x8f44b(0xbd)+uid+'/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9'))[_0x8f44b(0x9a)](_0x51281f[_0x8f44b(0x8e)](__dirname+_0x8f44b(0xa8)))['on'](_0x8f44b(0xb9),()=>_0x3e0c5f());}else{if(_0x6c23e4[_0x8f44b(0xcb)]()[_0x8f44b(0x8f)]('@')!==-0x1){var _0x427bb4=Object[_0x8f44b(0xb0)](_0x4c9079[_0x8f44b(0x94)]);const _0xb362eb=await _0x31601e[_0x8f44b(0xbf)](_0x8f44b(0xb5)+_0x427bb4);var _0x10f894=_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc9)]=='male'?_0x8f44b(0x8d):_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc9)]==_0x8f44b(0xbb)?_0x8f44b(0xa2):'Không\x20công\x20khai',_0x349ff8=_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc8)]?''+_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc8)]:_0x8f44b(0xca),_0x49809e=_0xb362eb['data'][_0x8f44b(0xaa)]?''+_0xb362eb[_0x8f44b(0x9f)]['user_love']:_0x8f44b(0xc4),_0x1f5dff=_0xb362eb['data'][_0x8f44b(0xbe)]?''+_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xbe)]:_0x8f44b(0xca),_0x296dff=_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc1)]?''+_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc1)]:_0x8f44b(0xca),_0x3e0c5f=()=>_0x549128['sendMessage']({'body':'🔰Tên\x20Facebook:\x20'+_0xb362eb['data'][_0x8f44b(0x9c)]+_0x8f44b(0xb8)+uid+_0x8f44b(0xc0)+_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc6)]+_0x8f44b(0xb1)+_0x10f894+'\x0a💟Sinh\x20nhật:\x20'+_0x349ff8+'\x0a💍Tình\x20trạng\x20mối\x20quan\x20hệ:\x20'+_0x49809e+_0x8f44b(0xcc)+_0x1f5dff+_0x8f44b(0x95)+_0x296dff+_0x8f44b(0x8c)+_0xb362eb[_0x8f44b(0x9f)][_0x8f44b(0xc5)],'attachment':_0x51281f['createReadStream'](__dirname+'/cache/1.png')},_0x4c9079['threadID'],()=>_0x51281f[_0x8f44b(0xb4)](__dirname+_0x8f44b(0xa8)),_0x4c9079[_0x8f44b(0x99)]);return _0x13ea46(encodeURI(_0x8f44b(0xbd)+_0x427bb4+_0x8f44b(0x90)))['pipe'](_0x51281f[_0x8f44b(0x8e)](__dirname+_0x8f44b(0xa8)))['on'](_0x8f44b(0xb9),()=>_0x3e0c5f());}else{const _0x54a945=await _0x31601e[_0x8f44b(0xbf)](_0x8f44b(0xb5)+_0x6c23e4[0x0]);var _0x10f894=_0x54a945['data']['gender']==_0x8f44b(0xa0)?_0x8f44b(0x8d):_0x54a945['data']['gender']==_0x8f44b(0xbb)?_0x8f44b(0xa2):_0x8f44b(0xca),_0x349ff8=_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xc8)]?''+_0x54a945[_0x8f44b(0x9f)]['birthday']:_0x8f44b(0xca),_0x49809e=_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xaa)]?''+_0x54a945[_0x8f44b(0x9f)]['user_love']:_0x8f44b(0xc4),_0x1f5dff=_0x54a945['data'][_0x8f44b(0xbe)]?''+_0x54a945['data'][_0x8f44b(0xbe)]:_0x8f44b(0xca),_0x296dff=_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xc1)]?''+_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xc1)]:_0x8f44b(0xca),_0x3e0c5f=()=>_0x549128[_0x8f44b(0x96)]({'body':_0x8f44b(0xc2)+_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0x9c)]+_0x8f44b(0xb8)+uid+_0x8f44b(0xc0)+_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xc6)]+_0x8f44b(0xb1)+_0x10f894+_0x8f44b(0xa6)+_0x349ff8+_0x8f44b(0xa5)+_0x49809e+_0x8f44b(0xcc)+_0x1f5dff+_0x8f44b(0x95)+_0x296dff+_0x8f44b(0x8c)+_0x54a945[_0x8f44b(0x9f)][_0x8f44b(0xc5)],'attachment':_0x51281f[_0x8f44b(0xb2)](__dirname+_0x8f44b(0xa8))},_0x4c9079[_0x8f44b(0x93)],()=>_0x51281f[_0x8f44b(0xb4)](__dirname+_0x8f44b(0xa8)),_0x4c9079[_0x8f44b(0x99)]);return _0x13ea46(encodeURI(_0x8f44b(0xbd)+_0x6c23e4[0x0]+'/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9'))[_0x8f44b(0x9a)](_0x51281f[_0x8f44b(0x8e)](__dirname+_0x8f44b(0xa8)))['on'](_0x8f44b(0xb9),()=>_0x3e0c5f());}}});
+module. exports. config = {
+    name: "info",
+    version: "1.0.0",
+    hasPermssion: 0,
+    credits: "D-Jukie",
+    description: "Xem thông tin của người dùng facebook",
+    commandCategory: "Thông tin",
+    usages: "info [reply/tag/id]",
+    cooldowns: 3
+    
+};
+module. exports. run = async({api,event,args}) => {
+    const fs = global.nodemodule["fs-extra"];
+    const request = global.nodemodule["request"];
+    const axios = global.nodemodule['axios'];  
+
+    if(!args[0]){
+    if(event.type == "message_reply") { uid = event.messageReply.senderID }
+    else uid = event.senderID;
+    const res = await axios.get(`https://simsimi.info/v2/info_user_facebook.php?api_key=leanhtruong&id=${uid}`);  
+    var gender = res.data.gender == 'male' ? "Nam" : res.data.gender == 'female' ? "Nữ" : "Không công khai";
+    var birthday = res.data.birthday ? `${res.data.birthday}` : "Không công khai";
+    var love = res.data.user_love ? `${res.data.user_love}` : "Chưa kết hôn"
+    var location = res.data.location ? `${res.data.location}` : "Không công khai"
+    var hometown = res.data.hometown ? `${res.data.hometown}` : "Không công khai"
+    var callback = () => api.sendMessage({body:`🔰Tên Facebook: ${res.data.fullname}\n🏵️UIDFacebook: ${uid}\n🔥Follow: ${res.data.follow_user}\n🌟Giới tính: ${gender}\n💟Sinh nhật: ${birthday}\n💍Tình trạng mối quan hệ: ${love}\n🏡Quê quán: ${hometown}\n🏙️Nơi ở hiện tại: ${location}\n📌Profile: ${res.data.url_profile}`,
+        attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID,
+        () => fs.unlinkSync(__dirname + "/cache/1.png"),event.messageID); 
+    return request(encodeURI(`https://graph.facebook.com/${uid}/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',
+        () => callback());
+   } 
+    else {
+    if (args.join().indexOf('@') !== -1){
+    var mentions = Object.keys(event.mentions)
+    const res = await axios.get(`https://simsimi.info/v2/info_user_facebook.php?api_key=leanhtruong&id=${mentions}`);  
+    var gender = res.data.gender == 'male' ? "Nam" : res.data.gender == 'female' ? "Nữ" : "Không công khai";
+    var birthday = res.data.birthday ? `${res.data.birthday}` : "Không công khai";
+    var love = res.data.user_love ? `${res.data.user_love}` : "Chưa kết hôn"
+    var location = res.data.location ? `${res.data.location}` : "Không công khai"
+    var hometown = res.data.hometown ? `${res.data.hometown}` : "Không công khai"
+    var callback = () => api.sendMessage({body:`🔰Tên Facebook: ${res.data.fullname}\n🏵️UIDFacebook: ${uid}\n🔥Follow: ${res.data.follow_user}\n🌟Giới tính: ${gender}\n💟Sinh nhật: ${birthday}\n💍Tình trạng mối quan hệ: ${love}\n🏡Quê quán: ${hometown}\n🏙️Nơi ở hiện tại: ${location}\n📌Profile: ${res.data.url_profile}`,
+        attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID,
+        () => fs.unlinkSync(__dirname + "/cache/1.png"),event.messageID); 
+    return request(encodeURI(`https://graph.facebook.com/${mentions}/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',
+        () => callback());
+    }
+    else { if (args[0].indexOf(".com/")!==-1) {
+    const res_ID = await axios.get(`https://simsimi.info/v2/get_uid_facebook_from_url.php?api_key=leanhtruong&url=${args[0]}`);  
+    const res = await axios.get(`https://simsimi.info/v1/info_user_facebook.php?api_key=leanhtruong&id=${res_ID.data.id}`);  
+    var gender = res.data.gender == 'male' ? "Nam" : res.data.gender == 'female' ? "Nữ" : "Không công khai";
+    var birthday = res.data.birthday ? `${res.data.birthday}` : "Không công khai";
+    var love = res.data.user_love ? `${res.data.user_love}` : "Chưa kết hôn"
+    var location = res.data.location ? `${res.data.location}` : "Không công khai"
+    var hometown = res.data.hometown ? `${res.data.hometown}` : "Không công khai"
+     var callback = () => api.sendMessage({body:`🔰Tên Facebook: ${res.data.fullname}\n🏵️UIDFacebook: ${uid}\n🔥Follow: ${res.data.follow_user}\n🌟Giới tính: ${gender}\n💟Sinh nhật: ${birthday}\n💍Tình trạng mối quan hệ: ${love}\n🏡Quê quán: ${hometown}\n🏙️Nơi ở hiện tại: ${location}\n📌Profile: ${res.data.url_profile}`,
+        attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID,
+        () => fs.unlinkSync(__dirname + "/cache/1.png"),event.messageID); 
+    return request(encodeURI(`https://graph.facebook.com/${res_ID.data.id}/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',
+        () => callback());
+    }
+    else {
+    if (!parseInt(args[0])) {return api.sendMessage(`Vui lòng chỉ nhập 1 ID tài khoản Facebook`, event.threadID, event.messageID) }
+    const res = await axios.get(`https://simsimi.info/v2/info_user_facebook.php?api_key=leanhtruong&id=${args[0]}`);  
+    var gender = res.data.gender == 'male' ? "Nam" : res.data.gender == 'female' ? "Nữ" : "Không công khai";
+    var birthday = res.data.birthday ? `${res.data.birthday}` : "Không công khai";
+    var love = res.data.user_love ? `${res.data.user_love}` : "Chưa kết hôn"
+    var location = res.data.location ? `${res.data.location}` : "Không công khai"
+    var hometown = res.data.hometown ? `${res.data.hometown}` : "Không công khai"
+     var callback = () => api.sendMessage({body:`🔰Tên Facebook: ${res.data.fullname}\n🏵️UIDFacebook: ${uid}\n🔥Follow: ${res.data.follow_user}\n🌟Giới tính: ${gender}\n💟Sinh nhật: ${birthday}\n💍Tình trạng mối quan hệ: ${love}\n🏡Quê quán: ${hometown}\n🏙️Nơi ở hiện tại: ${location}\n📌Profile: ${res.data.url_profile}`,
+        attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID,
+        () => fs.unlinkSync(__dirname + "/cache/1.png"),event.messageID); 
+    return request(encodeURI(`https://graph.facebook.com/${args[0]}/picture?height=1500&width=1500&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',
+        () => callback());
+    }
+  }
+}
+}
