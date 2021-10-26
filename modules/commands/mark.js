@@ -1,13 +1,11 @@
 module.exports.config = {
-
-	name: "zuck",
-
+	name: "mark",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "Tiadals",
-	description: "Comment trên bảng ( ͡° ͜ʖ ͡°)",
+	credits: "HĐGN",
+	description: "Viết chữ lên bảngʕっ•ᴥ•ʔっ",
 	commandCategory: "edit-img",
-	usages: "zuck [text]",
+	usages: "markzuckerberg [text]",
 	cooldowns: 10,
 	dependencies: {
 		"canvas":"",
@@ -50,25 +48,25 @@ module.exports.run = async function({ api, event, args }) {
 	const { loadImage, createCanvas } = require("canvas");
 	const fs = global.nodemodule["fs-extra"];
 	const axios = global.nodemodule["axios"];
-	let pathImg = __dirname + '/cache/trump.png';
+	let pathImg = __dirname + '/cache/markzuckerberg.png';
 	var text = args.join(" ");
-	if (!text) return api.sendMessage("Nhập nội dung comment trên bảng", threadID, messageID);
-	let getPorn = (await axios.get(`https://i.postimg.cc/gJCXgKv4/zucc.jpg`, { responseType: 'arraybuffer' })).data;
+	if (!text) return api.sendMessage("Nhập nội dung cần viết trên bảng", threadID, messageID);
+	let getPorn = (await axios.get(`https://i.imgur.com/9aaL2AP.png`, { responseType: 'arraybuffer' })).data;
 	fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
 	let baseImage = await loadImage(pathImg);
 	let canvas = createCanvas(baseImage.width, baseImage.height);
 	let ctx = canvas.getContext("2d");
 	ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-	ctx.font = "400 18px Arial";
+	ctx.font = "400 45px Arial";
 	ctx.fillStyle = "#000000";
 	ctx.textAlign = "start";
-	let fontSize = 50;
-	while (ctx.measureText(text).width > 1200) {
+	let fontSize = 45;
+	while (ctx.measureText(text).width > 2600) {
 		fontSize--;
-		ctx.font = `400 ${fontSize}px Arial`;
+		ctx.font = `400 ${fontSize}px Arial, sans-serif`;
 	}
-	const lines = await this.wrapText(ctx, text, 470);
-	ctx.fillText(lines.join('\n'), 15,75);//comment
+	const lines = await this.wrapText(ctx, text, 499);
+	ctx.fillText(lines.join('\n'), 100,550);//comment
 	ctx.beginPath();
 	const imageBuffer = canvas.toBuffer();
 	fs.writeFileSync(pathImg, imageBuffer);
