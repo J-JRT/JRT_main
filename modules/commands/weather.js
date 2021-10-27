@@ -1,53 +1,99 @@
 module.exports.config = {
-	name: "weather",
-	version: "1.0.1",
-	hasPermssion: 0,
-	credits: "Mirai Team",
-	description: "Xem thông tin thời tiết tại khu vực",
-	commandCategory: "other",
-	usages: "[Location]",
-	cooldowns: 5,
-	dependencies: {
-		"moment-timezone": "",
-		"request": ""
-	},
-	envConfig: {
-		"OPEN_WEATHER": "081c82065cfee62cb7988ddf90914bdd"
-	}
+    name: "dubaothoitiet",
+    version: "1.0.0",
+    hasPermssion: 0,
+    credits: "D-Jukie convert từ Goat",
+    description: "Xem thời tiết trong 5 ngày",
+    commandCategory: "Tin tức",
+    usages: "dubaothoitiet [location]",
+    cooldowns: 5
 };
+module.exports.run = async function ({
+    api,
+    event,
+    args,
+    utils
+}) {
+    const axios = require("axios");
+    const apikey = "d7e795ae6a0d44aaa8abb1a0a7ac19e4"
+    const moment = require("moment-timezone");
+    const Canvas = require("canvas");
+    const fs = require("fs-extra");
+    const area = args.join(" ");
+    if (!area) return api.sendMessage(`Vui lòng nhập địa điểm!`, event.threadID, event.messageID)
+    let areaKey, location = {},
+        dataWeather;
+    if (!fs.existsSync(__dirname + '/cache/bgweather.jpg')) {
+        let getbg = (await axios.get(`https://i.imgur.com/1Rx88Te.jpg`, {
+            responseType: "arraybuffer"
+        })).data;
+        fs.writeFileSync(__dirname + "/cache/bgweather.jpg", Buffer.from(getbg, "utf-8"));
+    }
+    if (!fs.existsSync(__dirname + "/cache/Play-Bold.ttf")) {
+        let getfont = (await axios.get("https://drive.google.com/u/0/uc?id=1uni8AiYk7prdrC7hgAmezaGTMH5R8gW8&export=download", {
+            responseType: "arraybuffer"
+        })).data;
+        fs.writeFileSync(__dirname + "/cache/Play-Bold.ttf", Buffer.from(getfont, "utf-8"));
+    };
+    try {
+        const response = (await axios.get(`https://api.accuweather.com/locations/v1/cities/search.json?q=${encodeURIComponent(area)}&apikey=${apikey}&language=vi-vn`)).data;
+        if (response.length == 0) return api.sendMessage(`Không tìm thấy địa điểm này!`, event.threadID, event.messageID)
+        const data = response[0];
+        areaKey = data.Key;
+        location = { latitude: data.GeoPosition.Latitude, longitude: data.GeoPosition.Longitude };
+    } catch (err) {
+        return api.sendMessage(`Đã có lỗi xảy ra!!`, event.threadID, event.messageID)
+    }
+    try {
+        dataWeather = (await axios.get(`http://api.accuweather.com/forecasts/v1/daily/10day/${areaKey}?apikey=${apikey}&details=true&language=vi`)).data;
+    } catch (err) {
+        return api.sendMessage(`Đã có lỗi xảy ra!!`, event.threadID, event.messageID)
+    }
 
-module.exports.languages = {
-	"vi": {
-		"locationNotExist": "Địa điểm %1 không tồn tại!",
-		"returnResult": "🌡 Nhiệt độ: %1°C\n🌡 Nhiệt độ cơ thể cảm nhận được: %2°C\n☁️ Cảnh quan hiện tại: %3\n💦 Độ ẩm: %4%\n💨 Tốc độ gió: %5km/h\n🌅 Mặt trời mọc vào lúc: %6\n🌄 Mặt trời lặn vào lúc: %7\n"
-	},
-	"en": {
-		"locationNotExist": "Can't find %1.",
-		"returnResult": "🌡 Temp: %1℃\n🌡 Feels like: %2℃\n☁️ Sky: %3\n💦 Humidity: %4%\n💨 Wind speed: %5km/h\n🌅 Sun rises: %6\n🌄 Sun sets: %7"
-	}
-}
+    function convertFtoC(F) { return Math.floor((F - 32) / 1.8); }
+    function formatHours(hours) { return moment(hours).tz("Asia/Ho_Chi_Minh").format("HH[h]mm[p]"); }
+    const dataWeatherDaily = dataWeather.DailyForecasts;
+    const dataWeatherToday = dataWeatherDaily[0];
+    let msg = `Thời tiết hôm nay:\n${dataWeather.Headline.Text}` +
+        `\n🌡 Nhiệt độ thấp nhất - cao nhất: ${convertFtoC(dataWeatherToday.Temperature.Minimum.Value)}°C - ${convertFtoC(dataWeatherToday.Temperature.Maximum.Value)}°C` +
+        `\n🌡 Nhiệt độ cảm nhận được: ${convertFtoC(dataWeatherToday.RealFeelTemperature.Minimum.Value)}°C - ${convertFtoC(dataWeatherToday.RealFeelTemperature.Maximum.Value)}°C` +
+        `\n🌅 Mặt trời mọc: ${formatHours(dataWeatherToday.Sun.Rise)}` +
+        `\n🌄 Mặt trời lặn ${formatHours(dataWeatherToday.Sun.Set)}` +
+        `\n🌃 Mặt trăng mọc: ${formatHours(dataWeatherToday.Moon.Rise)}` +
+        `\n🏙️ Mặt trăng lặn: ${formatHours(dataWeatherToday.Moon.Set)}` +
+        `\n🌞 Ban ngày: ${dataWeatherToday.Day.LongPhrase}` +
+        `\n🌙 Ban đêm: ${dataWeatherToday.Night.LongPhrase}`;
+    Canvas.registerFont(__dirname + "/cache/Play-Bold.ttf", { family: "Play-Bold" });
+    const bg = await Canvas.loadImage(__dirname + "/cache/bgweather.jpg");
+    const {
+        width,
+        height
+    } = bg;
+    const canvas = Canvas.createCanvas(width, height);
+    const ctx = canvas.getContext(`2d`);
+    ctx.drawImage(bg, 0, 0, width, height);
+    let X = 100;
+    ctx.fillStyle = "#ffffff";
+    const data = dataWeather.DailyForecasts.slice(0, 7);
+    for (let item of data) {
+        const icon = await Canvas.loadImage("http://vortex.accuweather.com/adc2010/images/slate/icons/" + item.Day.Icon + ".svg");
+        ctx.drawImage(icon, X, 210, 80, 80);
+        ctx.font = "22px Play-Bold";
+        const maxC = `${convertFtoC(item.Temperature.Maximum.Value)}°C `;
+        ctx.fillText(maxC, X, 366);
+        ctx.font = "22px Play-Bold";
+        const minC = String(`${convertFtoC(item.Temperature.Minimum.Value)}°C`);
+        const day = moment(item.Date).format("DD");
+        ctx.fillText(minC, X, 445);
+        ctx.fillText(day, X + 20, 140);
+        X += 135;
+    }
+    const pathSaveImg = __dirname + "/cache/weather.jpg";
+    fs.writeFileSync(pathSaveImg, canvas.toBuffer());
+    return api.sendMessage({
+            body: `${msg}`,
+            attachment: fs.createReadStream(pathSaveImg)
+        }, event.threadID,
+        () => fs.unlinkSync(pathSaveImg), event.messageID)
 
-module.exports.run = async ({ api, event, args, getText }) => {
-	const request = global.nodemodule["request"];
-	const moment = global.nodemodule["moment-timezone"];
-	const { throwError } = global.utils;
-	const { threadID, messageID } = event;
-	
-	var city = args.join(" ");
-	if (city.length == 0) return throwError(this.config.name, threadID, messageID);
-	return request(encodeURI("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + global.configModule[this.config.name].OPEN_WEATHER + "&units=metric&lang=" + global.config.language), (err, response, body) => {
-		if (err) throw err;
-		var weatherData = JSON.parse(body);
-		if (weatherData.cod !== 200) return api.sendMessage(getText("locationNotExist", city), threadID, messageID);
-		var sunrise_date = moment.unix(weatherData.sys.sunrise).tz("Asia/Ho_Chi_Minh");
-		var sunset_date = moment.unix(weatherData.sys.sunset).tz("Asia/Ho_Chi_Minh");
-		api.sendMessage({
-			body: getText("returnResult", weatherData.main.temp, weatherData.main.feels_like, weatherData.weather[0].description, weatherData.main.humidity, weatherData.wind.speed, sunrise_date.format('HH:mm:ss'), sunset_date.format('HH:mm:ss')),
-			location: {
-				latitude: weatherData.coord.lat,
-				longitude: weatherData.coord.lon,
-				current: true
-			},
-		}, threadID, messageID);
-	});
 }
