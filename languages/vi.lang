@@ -6,7 +6,7 @@
 # mirai.js
 
 mirai.errorFormat=Module không đúng định dạng!
-mirai.nameExist=Tên module bị trùng với một module mang cùng tên khác!
+mirai.nameExist=Tên module bị trùng với một module mang cùng tên khác hãy mau kiểm tra lại
 mirai.notFoundLanguage=Module %1 không hỗ trợ ngôn ngữ ngôn ngữ của bạn
 mirai.notFoundPackage=Không tìm thấy package %1 hỗ trợ cho module %2, tiến hành cài đặt...
 mirai.cantInstallPackage=Không thể cài đặt package %1 cho module %2, lỗi: %3
@@ -18,7 +18,7 @@ mirai.successLoadModule=Đã tải thành công module %1
 mirai.failLoadModule=Không thể tải thành công module %1, lỗi: %2
 mirai.finishLoadModule=Đã tải thành công %1 module commands và %2 module events
 mirai.foundPathAppstate=Đã tìm thấy file appstate
-mirai.notFoundPathAppstate=Không tìm thấy file appstate
+mirai.notFoundPathAppstate=Không tìm thấy file appstate vui lòng kiểm tra lại
 mirai.checkListGban=Đang kiểm tra danh sách global ban...
 mirai.banDevice=Hiện tại thiết bị của bạn đã bị ban khỏi miraiproject, liên hệ tới facebook https://fb.me/NHD.JRT.262 để biết thêm thông tin chi tiết hoặc xin key unban, nếu bạn đã có key unban hãy điền vào bên dưới!
 mirai.keyNotSameFormat=Dữ liệu bạn nhập phải là một dãy số bao gồm 6 chữ số!
@@ -60,7 +60,7 @@ users.needObject=Phải là một Object
 
 handleCommand.userBanned=Hiện tại bạn đang bị cấm sử dụng bot!\nLiên hệ FB: https://www.facebook.com/NHD.JRT.262 để biết thêm chi tiết.\n%1\n%2
 handleCommand.threadBanned=Hiện tại nhóm của bạn đang bị cấm sử dụng bot!\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.\nĐể có thể xin và sử dụng lại bot.\n%1\n%2
-handleCommand.commandNotExist=░░░▒█ ▒█▀▀█ ▀▀█▀▀ \n░▄░▒█ ▒█▄▄▀ ░▒█░░\n▒█▄▄█ ▒█░▒█ ░▒█░░\nĐọc kĩ hướng dẫn và sử dụng 💢💥💢\nLệnh bạn sử dụng không tồn tại, có phải là lệnh "%1" hay không?
+handleCommand.commandNotExist=╋┏┳━┳━━┓\n╋┃┃╋┣┓┏┛\n┏┫┃┓┫┃┃\n┗━┻┻┛┗┛\nĐọc kĩ hướng dẫn và sử dụng 💢💥💢\nLệnh bạn sử dụng không tồn tại, có phải là lệnh "%1" hay không?
 handleCommand.commandThreadBanned=Nhóm bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.
 handleCommand.commandUserBanned=Bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.
 handleCommand.threadNotAllowNSFW=Nhóm của bạn không được phép sử dụng những lệnh cấm NSFW vì nó chứa nội dung 18+ 
@@ -68,7 +68,7 @@ handleCommand.cantGetInfoThread=Không thể lấy thông tin của nhóm, lỗi
 handleCommand.permssionNotEnough=Xin lỗi vì bạn là thành nên lệnh  "%1" sẽ không hoạt động. Chỉ có quản trị viên hoặc ADMIN dùng được.\n💟Mãi Yêu💕
 handleCommand.cantSetMessageReaction=Đã có lỗi xảy ra không mong muốn tại setMessageReaction, lỗi: %1
 handleCommand.notFoundLanguage=Không tìm thấy ngôn ngữ hỗ trợ cho module %1s
-handleCommand.executeCommand=[ %1 ] Lệnh sử dụng: %2 bởi người dùng: %3 tại nhóm: %4 | Args đi kèm: %5 | Thời gian xử lý: %6ms
+handleCommand.executeCommand=» %1 « Lệnh sử dụng: %2 bởi người dùng: %3 tại nhóm: %4 | Args đi kèm: %5 | Thời gian xử lý: %6ms
 handleCommand.commandError=Đã xảy ra lỗi không mong muốn trong khi thực thi lệnh %1, lỗi: %2
 
 # includes/handle/handleCommandEvent.js
@@ -77,12 +77,12 @@ handleCommandEvent.moduleError=Đã xảy ra lỗi không mong muốn tại lệ
 
 # includes/handle/handleCreateDatabase.js
 
-handleCreateDatabase.newThread=nhóm mới: %1
-handleCreateDatabase.newUser=người dùng mới: %1
+handleCreateDatabase.newThread=Dữ liệu nhóm mới: %1
+handleCreateDatabase.newUser=Dữ liệu người dùng mới: %1
 
 # includes/handle/handleEvent.js
 
-handleEvent.executeEvent=[ %1 ] Event được thực thi: %2 tại nhóm: %3 | Thời gian xử lý: %4ms
+handleEvent.executeEvent=» %1 « Event được thực thi: %2 tại nhóm: %3 | Thời gian xử lý: %4ms
 handleEvent.eventError=Đã xảy ra lỗi không mong muốn trong khi thực thi event %1, lỗi: %12
 
 # includes/handle/handleReaction.js
