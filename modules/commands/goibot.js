@@ -1,91 +1,64 @@
-var _0x167cbc=_0x142f;function _0x142f(_0x2a59a6,_0x10301e){var _0x4ee155=_0x642c();return _0x142f=function(_0x4f22f6,_0x568943){_0x4f22f6=_0x4f22f6-(0x1896+0x119c+-0x29a3);var _0x17a077=_0x4ee155[_0x4f22f6];return _0x17a077;},_0x142f(_0x2a59a6,_0x10301e);}(function(_0x27432b,_0x3facf9){var _0x3b4d02=_0x142f,_0x200669=_0x27432b();while(!![]){try{var _0x37872b=parseInt(_0x3b4d02(0x93))/(-0x2c4+-0x20bf+0x2384)*(-parseInt(_0x3b4d02(0x95))/(-0x2071*0x1+0xd56+-0x65f*-0x3))+parseInt(_0x3b4d02(0x90))/(-0x4b0+-0x34e*0x7+0x4b*0x5f)*(parseInt(_0x3b4d02(0xa1))/(-0x19*-0xb7+0x4*0x4fd+-0x25cf))+parseInt(_0x3b4d02(0x92))/(0x1d68+-0x25dc+0x9*0xf1)*(parseInt(_0x3b4d02(0x8f))/(-0x943+0x4*-0x224+0x5f3*0x3))+-parseInt(_0x3b4d02(0x99))/(-0x17e9+-0xcfe+0x24ee)*(parseInt(_0x3b4d02(0x9d))/(0x1a92+0x24fd+-0x1a1*0x27))+parseInt(_0x3b4d02(0x9b))/(0x121*0x9+0x4*0x979+0x6dc*-0x7)*(parseInt(_0x3b4d02(0x91))/(-0x2*0x18e+0x51*0x1d+-0x607))+parseInt(_0x3b4d02(0xa3))/(-0xe1d+-0x211c+-0xa*-0x4ba)+parseInt(_0x3b4d02(0x9c))/(-0x931*0x3+0x1*-0x2665+0x14*0x34d)*(-parseInt(_0x3b4d02(0x98))/(-0x628+0xdd4+-0x79f));if(_0x37872b===_0x3facf9)break;else _0x200669['push'](_0x200669['shift']());}catch(_0x5a598d){_0x200669['push'](_0x200669['shift']());}}}(_0x642c,-0x8*-0x8fd4+-0x74b3f+0x7b9f6),module[_0x167cbc(0x9e)][_0x167cbc(0x96)]={'name':_0x167cbc(0x94),'version':_0x167cbc(0xa2),'hasPermssion':0x0,'credits':_0x167cbc(0x9a),'description':_0x167cbc(0x97)+_0x167cbc(0xa0),'commandCategory':_0x167cbc(0x9f),'usages':'','cooldowns':0x2,'denpendencies':{}});function _0x642c(){var _0x429c3e=['1330087kEVENA','5148UEJBRz','927VMRNmE','458390tBVyqZ','1390GMQBFh','17791ntYVTu','goibot','14QmhHci','config','Gọi\x20Bot\x20Ve','13LnTLEA','1666273pjRXoz','ManhG','117XzaYlw','1245924oVNLLC','16FTVeYP','exports','Không cần dấu lệnh','rsion\x203','932rZQzRt','1.1.0'];_0x642c=function(){return _0x429c3e;};return _0x642c();}
-
-module.exports.handleReply = async function({
-	api: e,
-	args: a,
-	Users: o,
-	event: n,
-	handleReply: s
-}) {
-	var t = await o.getNameUser(n.senderID);
-	switch (s.type) {
-		case "reply":
-			var i = global.config.ADMINBOT;
-			for (let a of i) e.sendMessage({
-				body: "Tin nhắn từ ❤" + t + ":\n" + n.body,
-				mentions: [{
-					id: n.senderID,
-					tag: t
-				}]
-			}, a, ((e, a) => global.client.handleReply.push({
-				name: this.config.name,
-				messageID: a.messageID,
-				messID: n.messageID,
-				author: n.senderID,
-				id: n.threadID,
-				type: "goibot"
-			})));
-			break;
-		case "goibot":
-			e.sendMessage({
-				body: `${n.body}`,
-				mentions: [{
-					tag: t,
-					id: n.senderID
-				}]
-			}, s.id, ((e, a) => global.client.handleReply.push({
-				name: this.config.name,
-				author: n.senderID,
-				messageID: a.messageID,
-				type: "reply"
-			})), s.messID)
-	}
+module.exports.config = {
+    name: "goibot",
+    version: "1.0.0",
+    hasPermssion: 0,
+    credits: "ManhG",
+    description: "Gọi Bot autoreply",
+    commandCategory: "Không cần dấu lệnh",
+    usages: "gọi bot",
+    cooldowns: 2,
+    denpendencies: {}
 }, module.exports.handleEvent = async ({
-	event: e,
-	api: a,
-	Users: o,
-	Threads: n
+    event: e,
+    api: o,
+    Users: t,
+    Threads: a
 }) => {
-	var {
-		threadID: s,
-		messageID: t,
-		body: i,
-		senderID: r
-	} = e;
-	if (r == a.getCurrentUserID()) return;
-	var d = require("moment-timezone").tz("Asia/Ho_Chi_Minh").format("HH:mm:ss D/MM/YYYY");
-	let m = await o.getNameUser(e.senderID);
-	var l = e.threadID;
-	let g = e.senderID,
-		h = (await n.getData(e.threadID)).threadInfo;
-	const c = global.config.ADMINBOT;
-  //Thêm, sửa các câu trả lời ở đây
-	var D = [
-    "Yêu em <3", "Hi, chào bạn", "Cậu gọi có việc gì không?", "Dạ, có em đây, yêu em không mà gọi <3. hmm...", `${m} sử dụng callad để liên lạc với admin!`, `${m} gọi em có việc gì thế`, `${m}, yêu em ko mà gọi😢`, `${m}, tôi yêu bạn vl ❤`, `${m}, bạn có yêu tôi không ❤`, `${m}, dạ có em đây:3`, `${m}, yêu Admin bot đi rồi hãy gọi`, `${m}, yêu em ❤`, `${m}, cần gì cứ liên hệ admin nhé <3`, `${m}, Em đây`
-    ],
-		y = D[Math.floor(Math.random() * D.length)];
-
-  //Các câu gọi bot
-	["bot", "bot ơi", "bot oi", "yêu bot", "bot đâu"].forEach((e => {
-      
-		let o = e[0].toUpperCase() + e.slice(1);
-		if (i === e.toUpperCase() | i === e | o === i) {
-			let o = h.threadName;
-			modules = "Gọi bot:", console.log(modules, e + "|", o), a.sendMessage(y, s, (() => {
-				var n = c;
-				for (var n of c) a.sendMessage(`=== Bot Notification ===\n\n👥Box Name: ${o}\n🔰ID box: ${l}\n💖Name User: ${m} \n💕ID User: ${g}\n🕒Time: ${d}\n😍Gọi bot: ${e}`, n, ((e, a) => global.client.handleReply.push({
-					name: this.config.name,
-					author: r,
-					messageID: a.messageID,
-					messID: t,
-					id: l,
-					idUser: g,
-					type: "goibot"
-				})))
-			}))
-		}
-	}))
-}, module.exports.run = async ({
-	event: e,
-	api: a
-}) => a.sendMessage("( \\_/)                                                                            ( •_•)                                                                            // >🧠                                                            Đưa não cho bạn lắp vào đầu nè.\nCó biết là lệnh Noprefix hay không?", e.threadID);
+    var {
+        threadID: n,
+        messageID: s,
+        body: i,
+        senderID: d
+    } = e;
+    const r = global.data.threadData.get(n) || {};
+    if (void 0 !== r.goibot && 0 == r.goibot) return;
+    if (d == global.data.botID) return;
+    let g = await t.getNameUser(e.senderID),
+        c = (await a.getData(e.threadID)).threadInfo;
+    var h = e.threadID,
+        l = ["Yêu em <3", "Em là con bot cute nhất <3", `Hi,${g} chào con vợ bé:3`, "Vợ gọi có việc gì không?", `Dạ ${g} có em đây, yêu em không mà gọi <3. hmm...`, `${g}, sử dụng callad để liên lạc với admin!`, `${g}, gọi em có việc gì thế`, `${g}, yêu em ko mà gọi 🥲`, `${g}, tôi yêu bạn vl ❤`, `${g}, yêu nhau không?`, `${g}, bạn có yêu tôi không ❤`, `${g}, dạ có em đây:3`, `${g}, yêu admin bot đi rồi hãy gọi`, `${g}, yêu em ❤`, `${g}, có thể donate cho admin được ko? Momo: 0396049649 !!!`, `${g}, Em đây`, "chào bạn tôi là bot của JRT", "bạn gọi tôi có việc gì?", "tôi yêu bạn vai lon", "Yêu em <3", "Hi, chào con vợ bé:3", "Chồng gọi có việc gì không?", "Sử dụng callad để liên lạc với admin!", "Em là bot cute nhất hành tinh", "Nói gì thế con lợn", "Em đây~~~~", "Yêu anh Đăng nhất💟", "Yêu thương admin nhất", "Anh ấy là phụ trợ của admin", "Sao thế công chúa", "Chăm chỉ học hành đi", "Bae ăn cơm chưa?", "Tuyển phi công nè ạ", "Làm đĩ không ạ? dui lắm", "Nếu cậu đang cô đơn thì chúng ta có thể thành đôi :3", "Đang làm gì vậy?", "Được của ló :)))", "Em dthw như chủ của em ạ", "Đừng khen em ngại quá hí hí" ,"Làm chồng em không ạ?", "Đừng spam em nha :<<, cô chủ em mệt lắm ời", "Cút ra", "Công chúa em sao đấy?", "Có gì ăn không:(( đói quáaa", "Yêu cậu như một cực hình\nNhấp lên nhấp xuống hai mình cùng rên", "Spam cc cút", "Yêu em không?", "Chồng em đây rồi", "Mày bị làm sao í@@", "Bạn là nhất!!!", "Kêu chi lắm thế? Bộ thích tao rồi à :v", "Chần chờ gì chồng ơi em đâyyy", "Chần chờ gì vợ ơi anh đâyyy", "Em... Sao em lại nói những cái lời đó chi zay em?", "Thầy dạy phờ ri màaa", "Yeu em rat nhieu ^^", "Đồ con lợn lùn :))", "Đợi xí. Đi ẻ cái :()", "500k bao phòng!!!", "Yeu anh den luy ^^", "Nên nhớ đừng bao giờ cướp chồng của admin :))", "Anh quát em à?\nNói to thế á?", "Trả quần cho em huhu", "Baby, take my hand. I want you to be my husband. Cause you're my Iron Man. And I love you 3000 <3", "Tao cười tao đi toilet=))", "Đây là trang web thông tin của admin, có gì liên hệ qua web này: https://j-jrt.github.io/Info/", "Đừng quá yêu một ai đó, khi chính bản thân bạn vẫn bị tổn thương!", "Bae, em nhu bong hoa. Nhung nguoi hai dau phai ta 💔", "Nuôi cậu để thịt ~~", "Overnight không?", "Hãy gọi cho admin tôi để được yêu thương<3", "Hát đi cho kẹo 🍭"],
+        u = l[Math.floor(Math.random() * l.length)];
+    ["bot", "bot ơi", "bot oi", "yêu bot", "bot đâu", "bot à", "bot đâu rồi", "bot đâu r"].forEach((e => {
+        let t = e[0].toUpperCase() + e.slice(1);
+        if (i === e.toUpperCase() | i === e | t === i) {
+            let t = c.threadName;
+            return modules = "------ Gọi bot ------\n", console.log(modules, e + "|", t, h), a = u, void o.sendMessage(a, n, s)
+        }
+        var a
+    }))
+}, module.exports.languages = {
+    vi: {
+        on: "Bật",
+        off: "Tắt",
+        successText: "goibot thành công"
+    },
+    en: {
+        on: "on",
+        off: "off",
+        successText: "goibot success!"
+    }
+}, module.exports.run = async function ({
+    api: e,
+    event: o,
+    Threads: t,
+    getText: a
+}) {
+    const {
+        threadID: n,
+        messageID: s
+    } = o;
+    let i = (await t.getData(n)).data;
+    return void 0 === i.goibot || 1 == i.goibot ? i.goibot = !1 : i.goibot = !0, await t.setData(n, {
+        data: i
+    }), global.data.threadData.set(n, i), e.sendMessage(`${0==i.goibot?a("off"):a("on")} ${a("successText")}`, n, s)
+};
