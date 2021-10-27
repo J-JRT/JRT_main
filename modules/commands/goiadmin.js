@@ -1,22 +1,26 @@
 module.exports.config = {
   name: "goiadmin",
   version: "1.0.0",
-  hasPermssion: 0,
+  hasPermssion: 2,
   credits: "JRT",
-  description: "Bot sẽ rep ng tag admin hoặc rep ng tagbot ",
-  commandCategory: "Không cần dấu lệnh",
+  description: "Tag admin",
+  commandCategory: "Hệ thống admin-bot",
   usages: "",
   cooldowns: 1
 };
-module.exports.handleEvent = function({ api, event }) {
-  if (event.senderID !== "") {
-    var aid = ["100038526232215"];
-    for (const id of aid) {
-    if ( Object.keys(event.mentions) == id) {
-      var msg = ["Tag lần nữa bố ban khỏi dùng 😼","Kêu réo thí chi lắm vậy :))","Đừng spam nữa :< cô chủ em đang học :((","Hãy dùng .callad để báo cáo cho chủ tôi biết!","Tag admin chi vậy?","Hiện tại cô chủ không có mặt ở đây! Vui lòng nhắn tin qua mess hoặc liên hệ trực trực tiếp để gặp được chủ tôi! ✅","Vui lòng dùng .ad hoặc .adm để biết thêm thông tin liên hệ admin!!!","Hiện tại người dùng không liên lạc được. Vui lòng đợi trong giây lát!","Sao? Có chuyện gì quan trọng mà kêu cả chủ tôi vậy?","Đừng mách lẽo với chủ em :<<","Em sai rồi! Đừng mách cô chủ :< em sẽ bị mắng đó 🥺","Ơ con tró này :)) đã bảo đừng tag nữa mà sao mày lì vậy 😾","Cô chủ đang học. Vui lòng không spam!!!","Tag gì lắm vậy? Tính không cho cô chủ phút giây bình yên à :))","Vui lòng ship 100 ly trà sữa để gọi hồn chủ tôi lên!!!","Tag một lần nữa mày xác định 🙂","Tag admin lần nữa tau sút :))","Sao tag có việc gì ngồi xuống uống tách trà tâm sự","Cô ấy đang bận ? Có chi không?"];
+module.exports.handleEvent = async function ( { api, event } ) {
+    var idad = ["100033478361032","100022113516016"];
+    for (const id of idad) {
+    if (!id) return
+    if (!idad) return
+    if(!event.body) return
+    if (Object.keys(event.mentions) == id) {
+      var msg = ["Tag Admin có gì ko?","Sao?? Làm ơn nhắn qua mess hoặc zalo để liên hệ ông chủ!!","Sao gọi chủ tôi có việc gì?","Hiện ông chủ tôi đang bận hãy sử dụng callad để liên hệ","Hãy dùng lệnh #ad để biết thông tin liên hệ chủ tôi","Tag nữa ăn đấm","Tag làm gì?","Sao? Tag có việc gì?","Thích tag ko :)","Tag gì lắm vậy? Bộ ko cho chủ tao xin phút gây bình yên à?","Sao tag có việc gì ngồi xuống uống tách trà tâm sự","Hãy dùng callad để liên hệ với admin >,<","Đây là trang web thông tin của admin, có gì liên hệ qua web này: https://j-jrt.github.io/Info/"];
       return api.sendMessage({body: msg[Math.floor(Math.random()*msg.length)]}, event.threadID, event.messageID);
     }
-    }}
-};
-module.exports.run = async function({}) {
+    else return
+    }
+}
+module.exports.run = async function ( { api, event } ) {
+api.sendMessage(`Tự động trả lời khi tag admin`,event.threadID,event.messageID)
 }
