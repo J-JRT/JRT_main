@@ -13,8 +13,7 @@
     "BOTNAME": "",
     "PREFIX": "/",
     "ADMINBOT": [
-        "USERID1",
-        "USERID2"
+        "IDFacebook"
     ],
     "DATABASE": {
         "sqlite": {
