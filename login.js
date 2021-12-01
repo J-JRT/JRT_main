@@ -1,24 +1,5 @@
-//const chrome = require('chrome-cookies-secure');
-//var fs = require('fs');
-
-//chrome.getCookies('https://www.facebook.com/', 'puppeteer', function(err, cookies) {
-  //  let cooky = cookies.map(mapper => ({
-    //    key: mapper.name,
-      //  value: mapper.value,
-        //domain: "facebook.com",
-        //path: mapper.path,
-        //hostOnly: mapper.hostOnly,
-        //creation: new Date().toISOString(),
-    //    lastAccessed: new Date().toISOString()
-    //}));
-    //let appstate = JSON.stringify(cooky, null, 4);
-    //fs.writeFile('appstate.json', appstate, 'utf8', function(err) {
-      //  if (err) throw err;
-       // console.log('complete');
-    //});
-//});
 const fs = require("fs-extra");
-const login = require("sieudangyeu");
+const login = require("@miraipr0ject/fca-unofficial");
 const readline = require("readline");
 const totp = require("totp-generator");
 
@@ -35,7 +16,7 @@ var rl = readline.createInterface({
 const option = {
 	logLevel: "silent",
 	forceLogin: true,
-	userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+	userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36"
 };
 
 const config = require(`./${configPath}`);
