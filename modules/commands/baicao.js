@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "CatalizCS //fix bug tiền by Jukie",
 	description: "Game bài cào dành cho nhóm có đặt cược",
-	commandCategory: "Giải trí",
+	commandCategory: "Trò chơi",
 	usages: "[create/start/join/info/leave]",
 	cooldowns: 1
 };
