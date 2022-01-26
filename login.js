@@ -1,5 +1,5 @@
 const fs = require("fs-extra");
-const login = require("@miraipr0ject/fca-unofficial");
+const login = require("fca-horizon-remake");
 const readline = require("readline");
 const totp = require("totp-generator");
 
@@ -16,7 +16,7 @@ var rl = readline.createInterface({
 const option = {
 	logLevel: "silent",
 	forceLogin: true,
-	userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36"
+	userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
 };
 
 const config = require(`./${configPath}`);
