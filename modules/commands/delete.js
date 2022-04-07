@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "delete",
 	version: "1.0.0",
-	hasPermssion: 3,
+	hasPermssion: 2,
 	credits: "D-Jukie",
 	description: "Xóa tất cả tin nhắn trên acc bot",
 	commandCategory: "Hệ thống admin-bot",
