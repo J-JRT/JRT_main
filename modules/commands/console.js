@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "console",
     version: "1.0.0",
-    hasPermssion: 3,
+    hasPermssion: 2,
     credits: "D-Jukie",//mod lại by Chung Đạt
     description: "Console bớt nhàm chán hơn",
     commandCategory: "Hệ thống admin-bot",
