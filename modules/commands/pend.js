@@ -2,7 +2,7 @@ module.exports.config = {
     name: "pending",
     version: "1.0.6",
     credits: "CatalizCS mod by Kadeer",
-    hasPermssion: 3,
+    hasPermssion: 2,
     description: "Quản lý tin nhắn chờ của bot",
     commandCategory: "Hệ thống admin-bot",
     usages: "[u] [t] [a]",
