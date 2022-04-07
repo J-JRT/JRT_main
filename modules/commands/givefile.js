@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: 'givefile',
 	version: '1.0.0',
-	hasPermssion: 3,
+	hasPermssion: 2,
 	credits: 'D-Jukie',
 	description: 'Share file',
 	commandCategory: 'Hệ thống admin-bot',
