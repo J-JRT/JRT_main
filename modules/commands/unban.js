@@ -2,7 +2,7 @@
 module.exports.config = {
   name: "unban",
   version: "1.0.0",
-  hasPermssion: 3,
+  hasPermssion: 2,
   credits: "ManhG",//Mod by H.Thanh
   description: "Gỡ ban nhóm và người dùng trong 1 nốt nhạc",
   commandCategory: "Hệ thống admin-bot",
