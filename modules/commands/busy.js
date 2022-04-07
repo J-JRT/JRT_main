@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "busy",
 	version: "1.0.0",
-	permissions: 3,
+	permissions: 2,
 	credits: "Henry",
 	description: "Bật hoặc tắt chế độ busy",
   usages: "busy [lí do]",
