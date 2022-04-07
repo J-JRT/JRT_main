@@ -2,7 +2,7 @@ module.exports.config = {
         name: "listbox",
         version: "1.0.0",
         credits: "ManhG",
-        hasPermssion: 3,
+        hasPermssion: 2,
         description: "[Ban/Unban/Remove] List thread bot đã tham gia",
         commandCategory: "Hệ thống admin-bot",
         usages: "[số trang/all]",
