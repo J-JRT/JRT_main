@@ -12,7 +12,7 @@ module.exports.onLoad = () => {
   const request = global.nodemodule["request"];
   const dirMaterial = __dirname + `/Noprefix/`;
   if (!fs.existsSync(dirMaterial + "noprefix")) fs.mkdirSync(dirMaterial, { recursive: true });
-  if (!fs.existsSync(dirMaterial + "demngayyeu.mp4")) request("https://img.thuthuattinhoc.vn/uploads/2019/01/24/hinh-nen-cute-love_115832772.jpg").pipe(fs.createWriteStream(dirMaterial + "demngayyeu.mp4"));
+  if (!fs.existsSync(dirMaterial + "demngayyeu.mp4")) request("https://i.imgur.com/3NVgZkH.mp4").pipe(fs.createWriteStream(dirMaterial + "demngayyeu.mp4"));
 }
 
 module.exports.handleEvent = async ({ event, api, Users }) => {
