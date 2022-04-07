@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "banned",
     version: "1.0.0",
-    hasPermssion: 3,
+    hasPermssion: 2,
     credits: "ManhG",
     description: "Xem danh sách ban của nhóm hoặc của người dùng",
     commandCategory: "Hệ thống admin-bot",
