@@ -22,7 +22,7 @@ module.exports = function({ api, models }) {
 	const handleReaction = require("./handle/handleReaction")({ api, models, Users, Threads, Currencies });
 	const handleEvent = require("./handle/handleEvent")({ api, models, Users, Threads, Currencies });
 	const handleCreateDatabase = require("./handle/handleCreateDatabase")({  api, Threads, Users, Currencies, models });
-  const handleUnsend = require("./handle/handleUnsend")({ api });
+  	const handleUnsend = require("./handle/handleUnsend")({ api });
 
 
 	logger.loader(`====== ${Date.now() - global.client.timeStart}ms ======`);
@@ -40,7 +40,6 @@ module.exports = function({ api, models }) {
 				handleCommand({ event });
 				handleReply({ event });
 				handleCommandEvent({ event });
-				handleAdminOnly({ event });
 
 				break;
 			case "event":
