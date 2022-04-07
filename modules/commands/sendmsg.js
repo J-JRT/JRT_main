@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "sendmsg",
 	version: "1.0.7",
-	hasPermssion: 3,
+	hasPermssion: 2,
 	credits: "manhG mod by Tiadals", //Vui lòng giữ nguyên credit hoặc ăn đấm !
 	description: "Gửi tin hắn đến người dùng(user)/nhóm(thread) bằng ID!",
 	commandCategory: "Hệ thống admin-bot",
