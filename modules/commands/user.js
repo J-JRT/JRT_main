@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "user"
 	, version: "1.0.0"
-	, hasPermssion: 3
+	, hasPermssion: 2
 	, credits: "ManhG"
 	, description: "Cấm người dùng dành riêng cho QTV BOX chat"
 	, commandCategory: "Nhóm"
