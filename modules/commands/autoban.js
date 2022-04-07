@@ -1,5 +1,5 @@
- const so_lan_spam = 3; // số lần spam, vượt quá sẽ bị ban
-  const thoi_gian_spam = 30000; // 60000 millisecond (1 phút)
+ const so_lan_spam = 5; // số lần spam, vượt quá sẽ bị ban
+  const thoi_gian_spam = 60000; // 60000 millisecond (1 phút)
   const unbanAfter = 86400000; // 600000 millisecond (10 phút) 
 module.exports.config = {
 	name: "autoban",
@@ -21,8 +21,8 @@ module.exports.handleEvent = async ({ Users, api, event}) => {
 	const moment = require("moment-timezone");
 	
   let { senderID, messageID, threadID } = event;
-  const so_lan_spam = 3; // số lần spam, vượt quá sẽ bị ban
-  const thoi_gian_spam = 30000; // 60000 millisecond (1 phút)
+  const so_lan_spam = 5; // số lần spam, vượt quá sẽ bị ban
+  const thoi_gian_spam = 60000; // 60000 millisecond (1 phút)
   const unbanAfter = 86400000; // 600000 millisecond (10 phút) 
   const folderRandomImage = __dirname + "/Noprefix/gái";
   const allImage = fs.readdirSync(folderRandomImage);
