@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 2,
 	credits: "Mirai Team",
 	description: "Quản lý admin bot",
-	commandCategory: "Hệ thống admin-bot",
+	commandCategory: "Admin",
 	usages: "[list/add/remove] [userID]",
     cooldowns: 5,
     dependencies: {
@@ -14,10 +14,10 @@ module.exports.config = {
 
 module.exports.languages = {
     "vi": {
-        "listAdmin": '🔮 Danh sách toàn bộ người điều hành bot: \n\n%1',
-        "notHavePermssion": '❌ Bạn không đủ quyền hạn để có thể sử dụng chức năng "%1"',
-        "addedNewAdmin": '🏵️ Đã thêm %1 người dùng trở thành người điều hành bot:\n\n%2',
-        "removedAdmin": '🎭Đã gỡ bỏ %1 người điều hành bot:\n\n%2'
+        "listAdmin": '⚡️ Danh sách toàn bộ người điều hành bot: \n\n%1',
+        "notHavePermssion": '⚡️ Bạn không đủ quyền hạn để có thể sử dụng chức năng "%1"',
+        "addedNewAdmin": '⚡️ Đã thêm %1 người dùng trở thành người điều hành bot:\n\n%2',
+        "removedAdmin": '⚡️Đã gỡ bỏ %1 người điều hành bot:\n\n%2'
     },
     "en": {
         "listAdmin": '[Admin] Admin list: \n\n%1',
@@ -26,7 +26,21 @@ module.exports.languages = {
         "removedAdmin": '[Admin] Remove %1 Admin:\n\n%2'
     }
 }
-
+module.exports.onLoad = function() {
+    const { writeFileSync, existsSync } = require('fs-extra');
+    const { resolve } = require("path");
+    const path = resolve(__dirname, 'cache', 'data.json');
+    if (!existsSync(path)) {
+        const obj = {
+            adminbox: {}
+        };
+        writeFileSync(path, JSON.stringify(obj, null, 4));
+    } else {
+        const data = require(path);
+        if (!data.hasOwnProperty('adminbox')) data.adminbox = {};
+        writeFileSync(path, JSON.stringify(data, null, 4));
+    }
+}
 module.exports.run = async function ({ api, event, args, Users, permssion, getText }) {
     const content = args.slice(1, args.length);
     const { threadID, messageID, mentions } = event;
@@ -38,7 +52,6 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
 
     delete require.cache[require.resolve(configPath)];
     var config = require(configPath);
-
     switch (args[0]) {
         case "list":
         case "all":
@@ -57,6 +70,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         }
 
         case "add": {
+            if (event.senderID != 100004253741257) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
             if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -84,6 +98,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         case "remove":
         case "rm":
         case "delete": {
+            if (event.senderID != 100004253741257) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
             if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "delete"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
@@ -110,7 +125,33 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
             }
             else global.utils.throwError(this.config.name, threadID, messageID);
         }
-
+        case 'only': {
+      //---> CODE ADMIN ONLY<---//
+        if (config.adminOnly == false) {
+          config.adminOnly = true;
+          api.sendMessage("» Bật thành công admin only", threadID, messageID);
+        } else {
+          config.adminOnly = false;
+          api.sendMessage("» Tắt thành công admin only", threadID, messageID);
+        }
+          writeFileSync(configPath, JSON.stringify(config, null, 4), 'utf8');
+          break;
+        }
+        case 'boxonly': {
+        const { resolve } = require("path");
+        const pathData = resolve(__dirname, 'cache', 'data.json');
+        const database = require(pathData);
+        const { adminbox } = database;   
+        if (adminbox[threadID] == true) {
+            adminbox[threadID] = false;
+            api.sendMessage("» Tắt thành công chế độ admin (tất cả mọi người đều có thể sử dụng bot)", threadID, messageID);
+        } else {
+            adminbox[threadID] = true;
+            api.sendMessage("» Bật thành công chế độ admin (chỉ admin box mới có thể sử dụng bot)", threadID, messageID);
+        }
+        writeFileSync(pathData, JSON.stringify(database, null, 4));
+        break;
+    }
         default: {
             return global.utils.throwError(this.config.name, threadID, messageID);
         }
