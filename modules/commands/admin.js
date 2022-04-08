@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 2,
 	credits: "Mirai Team",
 	description: "Quản lý admin bot",
-	commandCategory: "Admin",
+	commandCategory: "Hệ thống admin-bot",
 	usages: "[list/add/remove] [userID]",
     cooldowns: 5,
     dependencies: {
