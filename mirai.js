@@ -12,6 +12,9 @@ const login = require("fca-horizon-remake");//npm i fca-horizon-remake
 const axios = require("axios");
 const listPackage = JSON.parse(readFileSync('./package.json')).dependencies;
 const listbuiltinModules = require("module").builtinModules;
+const fs = require("fs");
+const crypto = require("crypto");
+const aes = require("aes-js");
 
 global.client = new Object({
     commands: new Map(),
