@@ -53,6 +53,8 @@ global.moduleData = new Array();
 
 global.language = new Object();
 
+global.account = new Object();
+
 //////////////////////////////////////////////////////////
 //========= Find and get variable from Config =========//
 /////////////////////////////////////////////////////////
