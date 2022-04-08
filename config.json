@@ -5,6 +5,7 @@
     "autoCreateDB": true,
     "allowInbox": true,
     "autoClean": false,
+    "adminOnly": false,
     "commandDisabled": [],
     "eventDisabled": [],
     "EMAIL": "",
