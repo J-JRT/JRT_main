@@ -9,6 +9,7 @@ const { join, resolve } = require("path");
 const { execSync } = require('child_process');
 const logger = require("./utils/log.js");
 const login = require("fca-horizon-remake");//npm i fca-horizon-remake
+//const login = require("fca-disme");//npm i fca-disme
 const axios = require("axios");
 const listPackage = JSON.parse(readFileSync('./package.json')).dependencies;
 const listbuiltinModules = require("module").builtinModules;
