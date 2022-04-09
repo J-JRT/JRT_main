@@ -19,26 +19,26 @@ mirai.failLoadModule=Không thể tải thành công module %1, lỗi: %2
 mirai.finishLoadModule=Đã tải thành công %1 module commands và %2 module events
 mirai.foundPathAppstate=Đã tìm thấy file appstate
 mirai.notFoundPathAppstate=Không tìm thấy file appstate vui lòng kiểm tra lại
-mirai.checkListGban=Đang kiểm tra danh sách global ban...
-mirai.banDevice=Hiện tại thiết bị của bạn đã bị ban khỏi miraiproject, liên hệ tới facebook https://fb.me/NHD.JRT.262 để biết thêm thông tin chi tiết hoặc xin key unban, nếu bạn đã có key unban hãy điền vào bên dưới!
+mirai.checkListGban=Đang kiểm tra danh sách BANNED...
+mirai.banDevice=Hiện tại thiết bị của bạn đã bị ban khỏi Bot JRT, liên hệ tới facebook https://fb.me/NHD.JRT.262!!!
 mirai.keyNotSameFormat=Dữ liệu bạn nhập phải là một dãy số bao gồm 6 chữ số!
 mirai.codeInputExpired=Code bạn nhập không trùng khớp hoặc đã hết hạn!
-mirai.unbanDeviceSuccess=Thiết bị của bạn đã được gỡ ban, hãy khởi động lại để có thể tiếp tục sử dụng
-mirai.userBanned=Bạn đã bị ban khỏi miraiproject vào lúc %1 với lý do: %2.\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649. để biết thêm chi tiết!
-mirai.finishCheckListGban=Đã kiểm tra xong danh sách global ban
+mirai.unbanDeviceSuccess=Facebook ID của bạn đã được gỡ ban, hãy khởi động lại để có thể tiếp tục sử dụng BOT JRT!!!
+mirai.userBanned=Bạn đã bị ban khỏi Bot JRT vào lúc %1 với lý do: %2.\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649. để biết thêm chi tiết!
+mirai.finishCheckListGban=Đã kiểm tra xong danh sách BANNED
 mirai.handleListenError=handleListener đã xảy ra một số lỗi không mong muốn, lỗi: %1
-mirai.warningSourceCode=\n░░░░░██╗░░░░░░░░░░░██╗██████╗░████████╗\n░░░░░██║░░░░░░░░░░░██║██╔══██╗╚══██╔══╝\n░░░░░██║█████╗░░░░░██║██████╔╝░░░██║░░░\n██╗░░██║╚════╝██╗░░██║██╔══██╗░░░██║░░░\n╚█████╔╝░░░░░░╚█████╔╝██║░░██║░░░██║░░░\n░╚════╝░░░░░░░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
+mirai.warningSourceCode=\nBOT JRT update complete!!!
 mirai.refreshListen=Đã làm mới lại handleListener...
-mirai.successConnectDatabase=Kết nối đến cơ sở dữ liệu thành công
-mirai.failConnectDatabase=Kết nối đến cơ sở dữ liệu thất bại, lỗi: %1
+mirai.successConnectDatabase=Dữ liệu Bot JRT đã được kết nối thành công!!
+mirai.failConnectDatabase=Dữ liệu Bot JRT đã được kết nối thất bại!!, lỗi: %1. Vui lòng hãy kiểm tra lại!!
 
 # includes/listen.js
 
-listen.startLoadEnvironment=Tiến hành khởi tạo biến môi trường...
-listen.loadedEnvironmentThread=Đã tải thành công biến môi trường nhóm
-listen.loadedEnvironmentUser=Đã tải thành công biến môi trường người dùng
-listen.successLoadEnvironment=Đã khởi tạo biến môi trường thành công
-listen.failLoadEnvironment=Khởi tạo biến môi trường không thành công, lỗi: %1
+listen.startLoadEnvironment=Tiến hành khởi tạo cấu trúc BOT JRT!
+listen.loadedEnvironmentThread=Đã khởi tạo thành công cấu trúc nhóm dùng BOT JRT!!!
+listen.loadedEnvironmentUser=Đã khởi tạo thành công cấu trúc người dùng BOT JRT!!!
+listen.successLoadEnvironment=Đã khởi tạo thành công cấu trúc BOT JRT thành công!!!
+listen.failLoadEnvironment=Khởi tạo cấu trúc BOT JRT không thành công, lỗi: %1
 
 # includes/controller/currencies.js
 
@@ -60,12 +60,12 @@ users.needObject=Phải là một Object
 
 handleCommand.userBanned=Hiện tại bạn đang bị cấm sử dụng bot!\nLiên hệ FB: https://www.facebook.com/NHD.JRT.262 để biết thêm chi tiết.\n%1\n%2
 handleCommand.threadBanned=Hiện tại nhóm của bạn đang bị cấm sử dụng bot!\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.\nĐể có thể xin và sử dụng lại bot.\n%1\n%2
-handleCommand.commandNotExist=▼￣＞-―-＜￣▼\n　 Ｙ　　　　Ｙ\n /　/　๑⚈ ․̫ ⚈๑)\n＼ ｜　 つ　　ヽつ\nĐọc kĩ hướng dẫn và sử dụng 💢💥💢\nLệnh bạn sử dụng không tồn tại, có phải là lệnh "%1" hay không?
+handleCommand.commandNotExist=🛸　　　 　🌎　°　\n☁    ☁ ☀         ☁     ☁\n   ☁       ✈ ☁    ☁\n🏢__🏨____🌴_🏘___🏩🏩__\n    /🚘 \🌴  /🚔    \?\n  / 🚔      \         🚍 \\nĐọc kĩ hướng dẫn và sử dụng 💢💥💢\nLệnh bạn sử dụng không tồn tại, có phải là lệnh "%1" hay không?
 handleCommand.commandThreadBanned=Nhóm bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.
 handleCommand.commandUserBanned=Bạn đã bị cấm sử dụng lệnh "%1"\nVui lòng liên hệ ADMIN qua:\n📌FB: Https://www.facebook.com/NHD.JRT.262\n☎️️Zalo: 0396049649.
 handleCommand.threadNotAllowNSFW=Nhóm của bạn không được phép sử dụng những lệnh cấm NSFW vì nó chứa nội dung 18+ 
 handleCommand.cantGetInfoThread=Không thể lấy thông tin của nhóm, lỗi: %1
-handleCommand.permssionNotEnough=Xin lỗi vì bạn là thành viên nên lệnh  "%1" sẽ không hoạt động. Chỉ có quản trị viên hoặc ADMIN dùng được.\n💟Mãi Yêu💕
+handleCommand.permssionNotEnough=Xin lỗi vì bạn là thành nên lệnh  "%1" sẽ không hoạt động. Chỉ có quản trị viên hoặc ADMIN dùng được.\n💟Mãi Yêu💕
 handleCommand.cantSetMessageReaction=Đã có lỗi xảy ra không mong muốn tại setMessageReaction, lỗi: %1
 handleCommand.notFoundLanguage=Không tìm thấy ngôn ngữ hỗ trợ cho module %1s
 handleCommand.executeCommand=» %1 « Lệnh sử dụng: %2 bởi người dùng: %3 tại nhóm: %4 | Args đi kèm: %5 | Thời gian xử lý: %6ms
@@ -77,8 +77,8 @@ handleCommandEvent.moduleError=Đã xảy ra lỗi không mong muốn tại lệ
 
 # includes/handle/handleCreateDatabase.js
 
-handleCreateDatabase.newThread=Dữ liệu nhóm mới: %1
-handleCreateDatabase.newUser=Dữ liệu người dùng mới: %1
+handleCreateDatabase.newThread=DATA USER UID: %1
+handleCreateDatabase.newUser=DATA THREAD ID: %1
 
 # includes/handle/handleEvent.js
 
