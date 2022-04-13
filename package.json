@@ -10,9 +10,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/D-Jukie/miraiv2.git"
+        "url": "git+https://github.com/J-JRT/JRT_main.git"
     },
-    "author": "D-Jukie",
+    "author": "J-JRT",
     "license": "GPL-3.0",
     "dependencies": {
         "@miraipr0ject/assets": "",
