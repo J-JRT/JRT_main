@@ -4,7 +4,7 @@
 <br>Các bạn lưu ý khi update thì ghi như này : npm i + tên package + @latest 
 <br>Ở cái package.json đã có toàn bộ các cái package các bạn chỉ bỏ ra vài phút update từng cái một thì nó sẽ đỡ lỗi hơn nhé
 <br>Các package update minh họa đây nhé... Có bao nhiêu các bạn update bấy nhiêu!!!
-<br>    "dependencies": {
+<br>
 <br>        "@miraipr0ject/assets": "",
 <br>        "async": "",
 <br>        "axios": "",
@@ -29,12 +29,12 @@
 <br>        "fca-disme": "",
 <br>        "fca-horizon-remake": "",
 <br>        "fca-unofficial": "",
-<br>       "fca-unofficial-force": "",
+<br>        "fca-unofficial-force": "",
 <br>        "fca-xuyen-get": "",
 <br>        "figlet": "",
 <br>        "fs-extra": "",
 <br>        "function": "",
-<br>       "gifencoder": "",
+<br>        "gifencoder": "",
 <br>        "helyt": "",
 <br>        "index": "",
 <br>        "jimp": "",
@@ -48,12 +48,12 @@
 <br>        "ms": "",
 <br>        "node-superfetch": "",
 <br>        "nomnom": "",
-<br>       "npmlog": "",
+<br>        "npmlog": "",
 <br>        "path": "",
 <br>        "pidusage": "",
 <br>        "readline": "",
 <br>        "request": "",
-<br>       "semver": "",
+<br>        "semver": "",
 <br>        "sequelize": "",
 <br>        "sieudangyeu": "",
 <br>        "simple-youtube-api": "",
@@ -67,4 +67,4 @@
 <br>        "totp-generator": "",
 <br>        "wikijs": "",
 <br>        "ytdl-core": ""
-<br>
+# Chúc các bạn chạy bot vui vẻ 
