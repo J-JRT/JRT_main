@@ -77,8 +77,8 @@ handleCommandEvent.moduleError=Đã xảy ra lỗi không mong muốn tại lệ
 
 # includes/handle/handleCreateDatabase.js
 
-handleCreateDatabase.newThread=THREAD ↣ %1
-handleCreateDatabase.newUser=USER ↣ %1
+handleCreateDatabase.newThread=%1
+handleCreateDatabase.newUser=%1
 
 # includes/handle/handleEvent.js
 
