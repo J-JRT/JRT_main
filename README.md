@@ -2,7 +2,7 @@
 ## Mọi người nhớ là khi npm i xong thì hãy npm i chalk@4.1.2 rùi npm start nhé <3
 ## I'm [J-JRT!](https://www.facebook.com/NHD.JRT.262) 👋
 <h1 align="center">
-    <img src=".home/img.svg" alt="Cant Load Image"/>
+    <img src="home/img.svg" alt="Cant Load Image"/>
 </h1>
 <a href="#" target="_blank">
   <img src="home/J-JRT.svg" width="1200" alt="Click to see the source" />
