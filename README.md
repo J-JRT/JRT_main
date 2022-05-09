@@ -1,56 +1,37 @@
 ### Hello everyone, thank you for visiting my Github!!! 👋
 ## Mọi người nhớ là khi npm i xong thì hãy npm i chalk@4.1.2 rùi npm start nhé <3
-
 ## I'm [J-JRT!](https://www.facebook.com/NHD.JRT.262) 👋
-
-
-<p align="center">
-    <img align="center" alt="PNG" src="https://i.pinimg.com/originals/a0/10/21/a010215b786ada4176ae237b5b154310.gif" />
-</br>
-</br>
-<a href="https://twitter.com/JrtOffcial">
-  <img align="left" alt="Pawan's Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg"/>
-</a>
-<a href="https://github.com/J-JRt">
-  <img align="left" alt="Pawan's Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />
-</a>
-<a href="https://instagram.com/hd.jrt.">
-  <img align="left" alt="Pawan's Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />
-</a>
-<a href="https://www.facebook.com/NHD.JRT.262">
-  <img align="left" alt="Pawan's Facebook" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/facebook.svg" />
-</a>
-<a href="https://www.youtube.com/channel/UCNK_WugSVHOSAIPKr2epEOQ">
-  <img align="left" alt="Pawan's Youtube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />
+<h1 align="center">
+    <img src=".home/img.svg" alt="Cant Load Image"/>
+</h1>
+<a href="#" target="_blank">
+  <img src="home/J-JRT.svg" width="1200" alt="Click to see the source" />
 </a>
 
-<br/>
-<br/>
+# 📰 Talking about Information
+<img align="right" width=200px alt="PNG" src="https://i.pinimg.com/originals/a0/10/21/a010215b786ada4176ae237b5b154310.gif" />
 
-- 📫 How to reach me: [Facebook - @NHD.JRT.262](https://www.facebook.com/NHD.JRT.262) , [Youtube - @JRT Official](https://www.youtube.com/channel/UCNK_WugSVHOSAIPKr2epEOQ)
-
-[![Twitter: imthepk](https://img.shields.io/twitter/follow/JrtOffcial?style=social)](https://twitter.com/JrtOffcial)
-[![GitHub iampawan](https://img.shields.io/github/followers/J-JRT?label=follow&style=social)](https://github.com/J-JRT)
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=mohamedsakeel&label=Profile%20views&color=0e75b6&style=flat" alt="mohamedsakeel" /> </p>
-<img width=800 src="https://github-profile-trophy.vercel.app/?username=J-JRT&column=8&theme=gruvbox&no-frame=true"/></a> 
-</p>
-<br>
-
-# Github Stats
-
-<img src="https://github-readme-stats.vercel.app/api?username=J-JRT&include_all_commits=true&count_private=true&show_icons=true&custom_title=J-JRT&line_height=20&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt = "Github Stats" >
-<img src="http://github-readme-streak-stats.herokuapp.com/?user=J-JRT&theme=neon-palenight" alt = "Github Streak" >
+-   ⚜️ My name is Nguyễn Hải Đăng.
+-   ❤️‍🔥 26/02/2003
+-   💬 My nickname is JRT
+-   💬 My rela is Rosie (Hà Nhung)
+-   💓 Relationship: Hẹn hò
+-   🍁 Profile: [Facebook](https://www.facebook.com/NHD.JRT.262)
+-   🍀 Describe yourself: I love to travel with my lover and travel to explore. Although I am a quiet person, but anyone who comes into contact with me, I am willing to open my heart. And especially I love this girl very much with all my heart and what I give her will be true and nothing more than that, friendship will rank 2nd and my lover will be 1st.
+<hr>
 
 # 📖 Top Langs
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=J-JRT&text_color=daf7dc&bg_color=151515)
+![](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+![Hello](hello.svg)
 # 🤝🏻 Connect with Me
 <p align="center">
-  
-&nbsp; <a href="https://www.instagram.com/hd.jrt.2k3" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/instagram-new.png" width="100" /></a> 
-&nbsp; <a href="https://www.tiktok.com/@hd.jrt03?" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/color/search" width="100" /></a>    
+&nbsp; <a href="https://www.instagram.com/hd.jrt.2k3" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/instagram-new.png" width="100" /></a>    
 &nbsp; <a href="https://github.com/J-JRT" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/github.png" width="100" /></a>
 &nbsp; <a href="https://www.facebook.com/NHD.JRT.262" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/facebook.png"  width="100" /></a>
 &nbsp; <a href="mailto:lehonguyen2k3@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/gmail.png"  width="100" /></a>
 </p>
+<br>
+<a href="#" target="_blank">
+  <img src="profile-night-view.svg" width="1200" alt="Click to see the source" />
+</a>  
+</a>
