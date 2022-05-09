@@ -32,6 +32,6 @@
 </p>
 <br>
 <a href="#" target="_blank">
-  <img src="profile-night-view.svg" width="1200" alt="Click to see the source" />
+  <img src="home/profile-night-view.svg" width="1200" alt="Click to see the source" />
 </a>  
 </a>
