@@ -24,7 +24,7 @@ module.exports.run = async ({ event, api, Currencies, args }) => {
             hours = Math.floor( (time/(1000*60*60)) / 24 ),
             minutes = Math.floor(time / 60),
             seconds = ((time % 60) / 1000).toFixed(0);
-                 const res = await axios.get("https://api.j-jrt-official.repl.co/naughty.php");
+                 const res = await axios.get("https://apimyjrt.jrt-official.repl.co/naughty.php");
 //lấy data trên web api
 const data = res.data.data;
 //tải ảnh xuống
@@ -39,7 +39,7 @@ let download = (await axios.get(data, {
             "daily"
         ];
         await Currencies.increaseMoney(event.senderID, parseInt(coinsup));
-                 const res = await axios.get("https://api.j-jrt-official.repl.co/naughty.php");
+                 const res = await axios.get("https://apimyjrt.jrt-official.repl.co/naughty.php");
 //lấy data trên web api
 const data = res.data.data;
 //tải ảnh xuống
