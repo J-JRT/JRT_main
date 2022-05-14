@@ -66,7 +66,7 @@ module.exports.handleReply = async function ({ event, api, handleReply }) {
         api.unsendMessage(handleReply.messageID);
         if (color == "no") var color = `#`;
         var callback = () => api.sendMessage({body:`[⚜️] Tên nhân vật: ${names}\n[⚜️] Mã số nhân vật: ${id}\n[⚜️] Chữ nền: ${nen}\n[⚜️] Chữ ký: ${ky}\n[⚜️] Màu nền: ${color}`,attachment: fs.createReadStream(__dirname + "/cache/tad.png")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/tad.png"),event.messageID); 
-       return request(encodeURI(`https://api-rosie.j-jrt-official.repl.co/taoanhdep/avatarwibu?id=${id}&chu_nen=${nen}&chu_ky=${ky}`)).pipe(fs.createWriteStream(__dirname+'/cache/tad.png')).on('close',() => callback());    
+       return request(encodeURI(`https://api-rosie.jrt-official.repl.co/taoanhdep/avatarwibu?id=${id}&chu_nen=${nen}&chu_ky=${ky}`)).pipe(fs.createWriteStream(__dirname+'/cache/tad.png')).on('close',() => callback());    
     }
    }
  }
@@ -75,13 +75,8 @@ module.exports.run = async function({ api, event, args, permssion }) {
     const fs = global.nodemodule["fs-extra"];
     const request = global.nodemodule["request"];
 	 const { threadID, messageID, senderID, body } = event;
-	 if (this.config.credits != 'JRT') {
-        console.log('\x1b[33m[⚜️] WARN [⚜️]\x1b[37m » Đổi credits con cặc đjt mẹ mày luôn đấy con chó:))');
-        return api.sendMessage('[⚜️] WARN [⚜️] Phát hiện người điều hành bot ' + global.config.BOTNAME + ' đổi credits modules "' + this.config.name + '"', threadID, messageID);
-      } 
-	
 if (args[0] == "list") {
-    axios.get(`https://api-rosie.j-jrt-official.repl.co/taoanhdep/list`).then(res => {
+    axios.get(`https://api-rosie.jrt-official.repl.co/taoanhdep/list`).then(res => {
       var count = res.data.listAnime.length;
       var data = res.data.listAnime
       var page = 1;
@@ -104,7 +99,7 @@ if (args[0] == "list") {
     } 
 else if (args[0] == "search") {
 	let nhanvat = args.join(" ");
-	const res = await axios.get(`https://api-rosie.j-jrt-official.repl.co/taoanhdep/search?key=${nhanvat}`);
+	const res = await axios.get(`https://api-rosie.jrt-official.repl.co/taoanhdep/search?key=${nhanvat}`);
 	var text = res.data.search.Name;
 	var idz = res.data.search.ID;
 	var color = res.data.search.color;
@@ -114,7 +109,7 @@ else if (args[0] == "search") {
 return api.sendMessage(`[⚜️] Nhân Vật: ${text} \n[⚜️] ID: ${idz}\n[⚜️] Màu Mặc Định: ${color}\n[⚜️] Nguồn: ${source}`, event.threadID, event.messageID)
 }
 else if(args[0] == "find"){
-       const ress = await axios.get('https://api-rosie.j-jrt-official.repl.co/taoanhdep/data')
+       const ress = await axios.get('https://api-rosie.jrt-official.repl.co/taoanhdep/data')
       var nhanvat = args[1]
       const data2 = ress.data.anime[nhanvat - 1].imgAnime
       var imag = (await axios.get(`${data2}`, {
@@ -130,7 +125,7 @@ else {
     if (senderID == api.getCurrentUserID()) return;
     const name = this.config.name;
     var id = args[0];
-    axios.get(`https://api-rosie.j-jrt-official.repl.co/taoanhdep/list`).then (res => {
+    axios.get(`https://api-rosie.jrt-official.repl.co/taoanhdep/list`).then (res => {
       if (!res.data.listAnime[id]) return api.sendMessage(`[⚜️] Không tìm thấy dữ liệu!!!`,threadID,messageID);
       var names = res.data.listAnime[id - 1].Name;
    return api.sendMessage(`[!] Đã tìm thấy ID nhân vật : ${id}[!]\n[!] Name nhân vật là ${names}\n\n[!] Reply tin nhắn này và chọn chữ nền cho hình ảnh của bạn [!]`,event.threadID, (err, info) => {
