@@ -21,7 +21,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
     if (money < 50 || isNaN(money)) return api.sendMessage("Mức đặt cược của bạn không phù hợp hoặc dưới 50$!!!", threadID, messageID);
     if (moneyUser < money) return api.sendMessage(`⚡️Số dư bạn không đủ ${money}$ để có thể chơi`, threadID, messageID);
     try {
-        const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/taixiu`)).data
+        const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/taixiu`)).data
         const image = [];
         const result = res.result;
         if(result == false) result = '3 mặt cùng loại';
