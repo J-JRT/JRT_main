@@ -14,7 +14,7 @@ module.exports.run = async function({ api, event, Users }) {
     const axios = require('axios');
 	const request = require('request');
 	const fs = require("fs");
-    axios.get('https://jrt-api.j-jrt-official.repl.co/genshin').then(res => {
+    axios.get('https://jrt-api.jrt-official.repl.co/genshin').then(res => {
 		let callback = function () {
 					api.sendMessage({
 						body : `[⚜️] Chúc mừng ${name} đã ra nhân vật này\n[⚜️] Tỉ lệ ra nhân vật này của bạn là: ${tle}%`,attachment: fs.createReadStream(__dirname + '/cache/genshin.mp4')
