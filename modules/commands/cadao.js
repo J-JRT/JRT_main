@@ -14,7 +14,7 @@ const axios = require('axios');
 const request = require('request');
 const fs = require("fs-extra");
 
-const rep = await axios.get(`https://jrt-api.j-jrt-official.repl.co/cadao`);
+const rep = await axios.get(`https://jrt-api.jrt-official.repl.co/cadao`);
 var cadao = rep.data.data;
   //console.log(rdCadao);
 
