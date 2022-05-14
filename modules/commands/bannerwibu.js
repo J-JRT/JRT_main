@@ -93,7 +93,7 @@ module.exports.handleReply = async function ({ event, api, handleReply }) {
         api.unsendMessage(handleReply.messageID);
         if (color == "No") var color = `#`;
         var callback = () => api.sendMessage({body:`[⚜️] Tên nhân vật: ${names}\n[⚜️] Mã số nhân vật: ${id}\n[⚜️] Chữ nền: ${nen}\n[⚜️] Chữ ký: ${ky}\n[⚜️] USER FACEBOOK: ${fb}\n[⚜️] Màu nền: ${color}`,attachment: fs.createReadStream(__dirname + "/cache/tad.png")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/tad.png"),event.messageID); 
-       return request(encodeURI(`https://Rosie.jrt-official.repl.co/taoanhdep?id=${id}&color=${color}&fb=${fb}&tenchinh=${nen}&tenphu=${ky}`)).pipe(fs.createWriteStream(__dirname+'/cache/tad.png')).on('close',() => callback());    
+       return request(encodeURI(`https://JRT-API.jrt-official.repl.co/taoanhdep?id=${id}&color=${color}&fb=${fb}&tenchinh=${nen}&tenphu=${ky}`)).pipe(fs.createWriteStream(__dirname+'/cache/tad.png')).on('close',() => callback());    
     }
    }
  }
@@ -129,7 +129,7 @@ if (args[0] == "list") {
        return request(encodeURI(`https://www.studytienganh.vn/upload/2017/08/40.jpg`)).pipe(fs.createWriteStream(__dirname+'/cache/taoanhdep.png')).on('close',() => callback());    
     } 
 else if(args[0] == "find"){
-       const ress = await axios.get('https://Rosie.jrt-official.repl.co/data3')
+       const ress = await axios.get('https://JRT-API.jrt-official.repl.co/data3')
       var nhanvat = args[1]
       const data2 = ress.data.anime[nhanvat - 1].imgAnime
       var imag = (await axios.get(`${data2}`, {
