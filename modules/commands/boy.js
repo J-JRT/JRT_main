@@ -13,7 +13,7 @@ module.exports.run = async ({ api, event }) => {
 	const axios = require('axios');
 	const request = require('request');
 	const fs = require("fs");
-		axios.get('https://api-jrt.jrt-official.repl.co/trai.php').then(res => {
+		axios.get('https://apimyjrt.jrt-official.repl.co/trai.php').then(res => {
 		let callback = function () {
 					api.sendMessage({
 						body : ``,
