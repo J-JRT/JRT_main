@@ -13,13 +13,13 @@ module.exports.config = {
 module.exports.run = async function ({ api, event, args, Currencies, Users }) {
     const { senderID, messageID, threadID } = event;
     const axios = require('axios');
-    const checkBank = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/check?ID=${senderID}`)).data   
+    const checkBank = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/check?ID=${senderID}`)).data   
     const { createReadStream } = require(`fs-extra`);
     switch(args[0]) {
         case 'register':
         case '-r':
         case 'r': {
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/register?senderID=${senderID}&name=${encodeURI((await Users.getData(senderID)).name)}`)).data
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/register?senderID=${senderID}&name=${encodeURI((await Users.getData(senderID)).name)}`)).data
             if(res.status == false) return api.sendMessage(res.message, threadID, messageID);
             api.sendMessage('Mật khẩu ngân hàng của bạn là: ' + res.message.password, senderID);
             return api.sendMessage(`=== [ ${res.message.noti} ] ===\n👤 Chủ tài khoản: ${res.message.name}\n💳 STK: ${res.message.STK}\n💰 Số dư: ${res.message.money}\n🔐  Password: đã được gửi đến bạn vui lòng check tin nhắn riêng ( hoặc tn spam )`, threadID, messageID)
@@ -31,7 +31,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
             if (args[1] != "stk" && args[1] != "id") {
                 api.sendMessage("Vui lòng chọn đúng kiểu dữ kiện (stk/id)", threadID, messageID)
             }
-            let { data } = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/find?type=${args[1].toUpperCase()}&${args[1].toUpperCase()}=${args[2]}`))
+            let { data } = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/find?type=${args[1].toUpperCase()}&${args[1].toUpperCase()}=${args[2]}`))
             const name = data.message.name
             const stk = data.message.data.STK
             const soDu = data.message.data.money
@@ -43,7 +43,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
       case '-c': {
         var a = event.senderID;
         if(checkBank.status == false) return api.sendMessage('Bạn chưa có tài khoản ngân hàng!', threadID, messageID);
-        const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/find?type=ID&ID=${a}`)).data  
+        const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/find?type=ID&ID=${a}`)).data  
           return api.sendMessage(`=== [ BANK KING ] ===\n👤 Chủ tài khoản: ${res.message.name}\n💳 STK: ${res.message.data.STK}\n💰 Số dư: ${res.message.data.money}$`, threadID, messageID)
       }
         case 'get':
@@ -65,7 +65,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
          case 'top':
          case '-t':{
             if(checkBank.status == false) return api.sendMessage('Bạn chưa có tài khoản trên ngân hàng!', threadID, messageID);
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/top`)).data  
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/top`)).data  
             if(res.status == false) return api.sendMessage('Hiện tại chưa có dữ liệu!', threadID, messageID);
             var msg = res.message + '\n'
             for (let i of res.ranking) {
@@ -116,7 +116,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
             var check = await checkMoney(senderID, args[1])
             if (check == false) return api.sendMessage('Tiền đâu mà nạp vô đây?', threadID, messageID);
             await Currencies.decreaseMoney(senderID, parseInt(args[1]))
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/send?senderID=${senderID}&money=${args[1]}`)).data  
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/send?senderID=${senderID}&money=${args[1]}`)).data  
             return api.sendMessage(`${res.message.noti}\n👤 Chủ tài khoản: ${res.message.name}\n💰 Số dư hiện tại: ${res.message.money}$`, threadID, messageID)
             break;
     }
@@ -126,7 +126,7 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
             var type = args[1];
             switch(type) {
                 case 'get': {
-                    const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/password?bka=${type}&dka=${senderID}`)).data 
+                    const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/password?bka=${type}&dka=${senderID}`)).data 
                     api.sendMessage('Mật khẩu của bạn được gửi đến tin nhắn chờ', threadID, messageID);
                     return api.sendMessage(`Mật khẩu của bạn là: ${res.message.password}`, senderID);
                 }
@@ -167,19 +167,19 @@ module.exports.handleReply = async function ({ api, event, handleReply, Currenci
     const { senderID, messageID, threadID , body } = event;
     switch(handleReply.type) {
         case 'paySTK': {
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/pay?type=STK&senderID=${senderID}&STK=${handleReply.STK}&money=${handleReply.money}&password=${body}`)).data 
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/pay?type=STK&senderID=${senderID}&STK=${handleReply.STK}&money=${handleReply.money}&password=${body}`)).data 
             if(res.status == false) return api.sendMessage(res.message, threadID, messageID);
             api.sendMessage(`${res.message.noti}\n${res.message.data.message}`, threadID, messageID);
             return api.sendMessage(`${res.message.noti}\n\n${res.message.data.message}`, handleReply.threadID);
         }
         case 'payID': {
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/pay?type=ID&senderID=${senderID}&userID=${handleReply.ID}&money=${handleReply.money}&password=${body}`)).data 
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/pay?type=ID&senderID=${senderID}&userID=${handleReply.ID}&money=${handleReply.money}&password=${body}`)).data 
             if(res.status == false) return api.sendMessage(res.message, threadID, messageID);
             api.sendMessage(`${res.message.noti} ${res.message.data.message}`, threadID, messageID);
             return api.sendMessage(`${res.message.noti}\n\n${res.message.data.message}`, handleReply.threadID);
         }
         case 'getMoney': {
-            const res = (await axios.get(`https://api-rosie.j-jrt-official.repl.co/bank/get?ID=${senderID}&money=${handleReply.money}&password=${body}`)).data  
+            const res = (await axios.get(`https://api-rosie.jrt-official.repl.co/bank/get?ID=${senderID}&money=${handleReply.money}&password=${body}`)).data  
             if(res.status == false) return api.sendMessage(res.message, threadID, messageID);
             await Currencies.increaseMoney(senderID, parseInt(handleReply.money))
             api.sendMessage(`${res.message.noti}\n👤 Chủ tài khoản: ${res.message.name}\n💰 Số dư còn lại: ${res.message.money}`, threadID, messageID);
