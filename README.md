@@ -1,5 +1,5 @@
 ### Hello everyone, thank you for visiting my Github!!! 👋
-## Mọi người nhớ là khi npm i xong thì hãy npm i chalk@4.1.2 rùi npm start nhé <3
+## Mọi người nhớ là khi npm i xong (có thể sẽ mất 5p vì package update khá nhiều vì tránh lỗi) thì hãy npm i chalk@4.1.2 rùi npm start nhé <3
 ## I'm [J-JRT!](https://www.facebook.com/NHD.JRT.262) 👋
 <h1 align="center">
     <img src="home/img.svg"/>
