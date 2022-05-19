@@ -22,6 +22,7 @@ module.exports = function({ api, models }) {
 	const handleReaction = require("./handle/handleReaction")({ api, models, Users, Threads, Currencies });
 	const handleEvent = require("./handle/handleEvent")({ api, models, Users, Threads, Currencies });
 	const handleCreateDatabase = require("./handle/handleCreateDatabase")({  api, Threads, Users, Currencies, models });
+	const handleRefresh = require("./handle/handleRefresh")({  api, Threads, Users, Currencies, models });
 
 	logger.loader(`====== ${Date.now() - global.client.timeStart}ms ======`);
 
@@ -31,27 +32,27 @@ module.exports = function({ api, models }) {
 	
 	return (event) => {
 		switch (event.type) {
-			case "message":
-			case "message_reply":
-			case "message_unsend":
-				handleCreateDatabase({ event });
-				handleCommand({ event });
-				handleReply({ event });
-				handleCommandEvent({ event });
+      case "message":
+      case "message_reply":
+      case "message_unsend":
+        handleCreateDatabase({ event });
+        handleCommand({ event });
+        handleReply({ event });
+        handleCommandEvent({ event });
 
-				break;
-			case "event":
-				handleEvent({ event });
-				break;
-			case "message_reaction":
-				if(event.senderID == api.getCurrentUserID() && event.reaction == '❤️') {
+        break;
+      case "event":
+        handleEvent({ event });
+        handleRefresh ({ event });
+        break;
+      case "message_reaction":
+        if(event.senderID == api.getCurrentUserID() && event.reaction == '😆') {
 					api.unsendMessage(event.messageID)
 				}
 				handleReaction({ event });
-				break;
-			default:
-				break;
-		}
-	};
+        break;
+      default:
+        break;
+    }
+  };
 };
-
