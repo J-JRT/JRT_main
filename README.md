@@ -1,5 +1,5 @@
 ### Hello everyone, thank you for visiting my Github!!! 👋
-## Mọi người nhớ là khi npm i xong (có thể sẽ mất 10p vì package update khá nhiều vì tránh lỗi nên là hãy kiên nhẫn nhé!!! Tránh mất kiểm soát) rùi npm audit fix rồi npm start nhé <3
+## Mọi người nhớ là khi npm i xong (có thể sẽ mất 10p vì package update khá nhiều vì tránh lỗi nên là hãy kiên nhẫn nhé!!! Tránh mất kiểm soát) rồi npm start nhé (đặc biệt cấm tuyệt đối npm audit fix tránh xảy ra tình trạng lỗi, tôi sẽ update package thường xuyên để ko bị lỗi <3
 ## I'm [J-JRT!](https://www.facebook.com/NHD.JRT.262) 👋
 <h1 align="center">
     <img src="home/img.svg"/>
