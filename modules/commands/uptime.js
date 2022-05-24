@@ -33,13 +33,13 @@ module.exports.run = async ({ api, event,arg, Users }) => {
 		});
 	const ketqua = await speedTest.getSpeed();
   const request = require('request');
-	const res = await axios.get(`https://jrt-api.j-jrt-official.repl.co/love`);
+	const res = await axios.get(`https://jrt-api.jrt-official.repl.co/love`);
 var love = res.data.data;
-  const req = await axios.get(`https://jrt-api.j-jrt-official.repl.co/cadao`);
+  const req = await axios.get(`https://jrt-api.jrt-official.repl.co/cadao`);
 var cadao = req.data.data;
-  const jrt = await axios.get(`https://jrt-api.j-jrt-official.repl.co/thayboi`);
+  const jrt = await axios.get(`https://jrt-api.jrt-official.repl.co/thayboi`);
 var thayboi = jrt.data.data;
-   const rep = await axios.get(`https://jrt-api.j-jrt-official.repl.co/joker`);
+   const rep = await axios.get(`https://jrt-api.jrt-official.repl.co/joker`);
 var joker = rep.data.data;
 	const fs = require("fs");
     let name = await Users.getNameUser(event.senderID)
@@ -60,7 +60,7 @@ var joker = rep.data.data;
   if (thu == 'Saturday') thu = 'Thứ Bảy'
     const timeStart = Date.now();
 	let today = new Date();
- axios.get('https://api-jrt.j-jrt-official.repl.co/girl.php').then(res => {
+ axios.get('https://apimyjrt.jrt-official.repl.co/instagram.php').then(res => {
  let ext = res.data.data.substring(res.data.data.lastIndexOf(".") + 1);
  let callback = function () {
      api.sendMessage({body: `[🔱]Chào cậu: ${name}\n[🔱]Hôm này là: ${thu} || ${gio}\n[🔱]Bot của JRT đã hoạt động được: ${hours} giờ ${minutes} phút ${seconds} giây.\n[🔱]Prefix: ${global.config.PREFIX}\n[🔱]Version: 1.2.15\n[🔱]Tổng người dùng: ${global.data.allUserID.length}\n[🔱]Tổng Nhóm: ${global.data.allThreadID.length}\n[🔱]Cpu đang sử dụng: ${pidusage.cpu.toFixed(1)}\n[🔱]Ram đang sử dụng: ${byte2mb(pidusage.memory)}\n[🔱]Ping: ${Date.now() - timeStart}ms\n[🔱]Tốc độ mạng : ${ketqua} Mbs \n≻───── •👇🏻• ─────≺\n[🔱]Thính:\n${love}\n[🔱]𝐂𝒂 𝒅𝒂𝒐 𝒗𝒊ệ𝒕 𝒏𝒂𝒎:\n${cadao}\n[🔱] Bạn có biết:\n${joker}\n[🔱] Thầy bói said:\n${thayboi}`, attachment: fs.createReadStream(__dirname + `/cache/waifu.${ext}`)
