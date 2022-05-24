@@ -6,7 +6,7 @@ module.exports.config = {
     name: "dhbc",
     version: "1.2.0",
     hasPermssion: 0,
-    credits: "D-Jukie", //thay credits hộ luôn =))
+    credits: "D-Jukie",
     description: "Đuổi hình bắt chữ trên chính messenger của bạn!!!",
     commandCategory: "Game",
     usages: "[1/2]",
@@ -31,7 +31,7 @@ module.exports.handleReply = async function ({
         switch (event.body) {
         case "2": {
             api.unsendMessage(handleReply.messageID);
-            const res = await axios.get(`https://raw.githubusercontent.com/Chinhle242/data/main/data.json`);
+            const res = await axios.get(`https://raw.githubusercontent.com/J-JRT/api1/mainV2/data.json`);
             const length1 = res.data.doanhinh.length
             const dataGame = res.data.doanhinh[Math.floor(Math.random() * length1)]
             const tukhoadung = dataGame.tukhoa;
@@ -71,7 +71,7 @@ module.exports.handleReply = async function ({
         }
         case "1": {
             api.unsendMessage(handleReply.messageID);
-            const res = await axios.get(`https://raw.githubusercontent.com/Chinhle242/data/main/data2.json`);
+            const res = await axios.get(`https://raw.githubusercontent.com/J-JRT/api1/mainV2/data2.json`);
             const length2 = res.data.doanhinh.length
             const dataGame = res.data.doanhinh[Math.floor(Math.random() * length2)]
             const tukhoadung = dataGame.tukhoa;
@@ -177,7 +177,7 @@ module.exports.run = async function ({
     }
     if (args[0] == '1') {
     //api.unsendMessage(handleReply.messageID);
-            const res = await axios.get(`https://raw.githubusercontent.com/Chinhle242/data/main/data2.json`);
+            const res = await axios.get(`https://raw.githubusercontent.com/J-JRT/api1/mainV2/data2.json`);
             const length2 = res.data.doanhinh.length
             const dataGame = res.data.doanhinh[Math.floor(Math.random() * length2)]
             const tukhoadung = dataGame.tukhoa;
@@ -211,7 +211,7 @@ module.exports.run = async function ({
     }
     if (args[0] == '2') {
     //api.unsendMessage(handleReply.messageID);
-            const res = await axios.get(`https://raw.githubusercontent.com/Chinhle242/data/main/data.json`);
+            const res = await axios.get(`https://raw.githubusercontent.com/J-JRT/api1/mainV2/data2.json`);
             const length1 = res.data.doanhinh.length
             const dataGame = res.data.doanhinh[Math.floor(Math.random() * length1)]
             const tukhoadung = dataGame.tukhoa;
