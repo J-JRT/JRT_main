@@ -6,6 +6,7 @@
     "allowInbox": true,
     "autoClean": false,
     "adminOnly": false,
+    "encryptAppstate": false,
     "commandDisabled": [],
     "eventDisabled": [],
     "EMAIL": "",
