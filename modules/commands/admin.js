@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "admin",
 	version: "1.0.5",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "Mirai Team",
 	description: "Quản lý admin bot",
 	commandCategory: "Hệ thống admin-bot",
