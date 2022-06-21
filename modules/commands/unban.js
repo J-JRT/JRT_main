@@ -2,8 +2,8 @@
 module.exports.config = {
   name: "unban",
   version: "1.0.0",
-  hasPermssion: 2,
-  credits: "ManhG",//Mod by H.Thanh
+  hasPermssion: 3,
+  credits: "ManhG",
   description: "Gỡ ban nhóm và người dùng trong 1 nốt nhạc",
   commandCategory: "Hệ thống admin-bot",
   usages: "unban",
@@ -13,7 +13,7 @@ module.exports.config = {
 
 module.exports.run = async ({ event, api, Users, Threads, args }) => {
   var { threadID, messageID, senderID } = event;
-  
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
   const { commands } = global.client;
   const command = commands.get(("unban").toLowerCase());
   const credit = command.config.credits;
