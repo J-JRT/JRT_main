@@ -5,16 +5,19 @@
     "autoCreateDB": true,
     "allowInbox": true,
     "autoClean": false,
-    "adminOnly": false,
+    "adminPaseOnly": true,
     "encryptAppstate": false,
     "commandDisabled": [],
     "eventDisabled": [],
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "",
+    "BOTNAME": "[⚜️] 𝓑𝓸𝓽 𝓙𝓡𝓣 [🔱] » 𝐌𝐨𝐦𝐨: 0396049649",
     "PREFIX": "!",
     "ADMINBOT": [
+        "UIDFacebook"
+    ],
+    "NDH": [
         "UIDFacebook"
     ],
     "DATABASE": {
@@ -31,5 +34,7 @@
         "selfListen": true,
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36"
     }
+    "ndhOnly": false,
+    "adminOnly": true
 }
    
