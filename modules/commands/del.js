@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "del",
 	version: "1.0.0", 
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "banledangyeuu",
 	description: "Lọc box và người dùng",
 	commandCategory: "Hệ thống admin-bot", 
@@ -11,7 +11,7 @@ module.exports.config = {
 };
 
 module.exports.run = async function({ api, event, args, Users, Currencies, Threads }) {
-  if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
     var {threadID, messageID, senderID} = event;
     if (args[0] == "user"){
             let number = [];
