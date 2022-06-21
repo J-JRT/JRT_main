@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "sendmsg",
 	version: "1.0.7",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "manhG mod by Tiadals", //Vui lòng giữ nguyên credit hoặc ăn đấm !
 	description: "Gửi tin hắn đến người dùng(user)/nhóm(thread) bằng ID!",
 	commandCategory: "Hệ thống admin-bot",
@@ -11,7 +11,7 @@ module.exports.config = {
 
 	module.exports.run = async ({ api, event, args }) => {
 		const request = global.nodemodule["request"];
-    if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+    if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 	const fs = require('fs')
 	const axios = require('axios')
 	if (args.length == 0) return api.sendMessage("Syntax error, use: sendmsg ID_BOX [lời nhắn]", event.threadID, event.messageID);
