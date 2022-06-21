@@ -1,7 +1,7 @@
 module.exports.config = {
     name: "renamebot",
     version: "1.0.0",
-    hasPermssion: 2,
+    hasPermssion: 3,
     credits: "CatalizCS",
     description: "Đổi biệt danh của bot ở toàn bộ bot!",
     commandCategory: "Hệ thống admin-bot",
@@ -10,6 +10,7 @@ module.exports.config = {
 };
 
 module.exports. run = async ({ event, api, global, args, Threads, client }) => {
+    if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
     const custom = args.join(" "),
             allThread = await Threads.getAll(["threadID"]),
             idBot = api.getCurrentUserID();
