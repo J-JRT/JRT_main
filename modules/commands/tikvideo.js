@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "tikvd",
+  name: "tikvideo",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Horizon",
