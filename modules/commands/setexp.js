@@ -1,8 +1,8 @@
 module.exports.config = {
 	name: "setexp",
 	version: "0.0.1",
-	hasPermssion: 0,
-	credits: "loi",
+	hasPermssion: 3,
+	credits: "JRT fix",
 	description: "thay đổi số tiền của bản thân hoặc người được tag",
 	commandCategory: "Hệ thống admin-bot",
 	usages: "setexp me/del/uid[Tag]",
@@ -18,7 +18,7 @@ module.exports.config = {
 };
 
 module.exports.run = async function({ api, event, args, Currencies, utils, Users}) {
-  if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 var mention = Object.keys(event.mentions)[0];
     var prefix = "#"
     var {body} = event;
