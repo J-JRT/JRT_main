@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: 'sendfile',
 	version: '1.0.0',
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: 'NTKhang mod by litch',
 	description: 'Gửi file',
 	commandCategory: 'Hệ thống admin-bot',
@@ -16,7 +16,7 @@ module.exports.run = async({args,api,event}) => {
 		pathrntxt = [];
 	var msg = '';
 	var notfound = "";
-	if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Chúc bạn may mắn lần sau:))`, event.threadID, event.messageID)
+	if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 	for (let file of args) {
 		if (!fs.existsSync(__dirname +"/../events/" + file)) {
 			notfound += 'Không tìm thấy file: ' + file;
