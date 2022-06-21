@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "config",
 	version: "1.0.3",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "Thiệu Trung Kiên",
 	description: "Command Prompt",
 	commandCategory: "Hệ thống admin-bot",
