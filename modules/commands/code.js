@@ -15,9 +15,7 @@ module.exports.run = async({ api, event, args }) => {
     const axios = global.nodemodule["axios"];
     const fs = global.nodemodule["fs-extra"];
     const cheerio = global.nodemodule["cheerio"];
-  const permission = ["100033478361032"];
-	if (!permission.includes(event.senderID)) return api.sendMessage("Chào bạn chúc bạn một ngày tốt lành😼:))", event.threadID, event.messageID);
-
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
     if (args.length == 0) return api.sendMessage("Lỗi cú pháp", event.threadID);
     var path = __dirname + '/';
     if (args[0] == "edit") {
