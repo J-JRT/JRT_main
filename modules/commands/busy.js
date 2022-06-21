@@ -49,6 +49,7 @@ module.exports.handleEvent = async function({ api, event, Users }) {
 }
 
 module.exports.run = async function({ api, event, args, Users }) {
+	if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 	await new Promise(resolve => setTimeout(resolve, 1000));
     let busyData = JSON.parse(fs.readFileSync(busyPath));
     const { threadID, senderID, messageID, body } = event;
