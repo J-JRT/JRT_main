@@ -1,11 +1,11 @@
 module.exports.config = {
 	name: "flop",
 	version: "1.0.0", 
-	hasPermssion: 2,
+	hasPermssion: 0,
 	credits: "Khánh Milo",
 	description: "Hủy box chat xóa toàn bộ all",
 	commandCategory: "Hệ thống admin-bot", 
-	usages: "", 
+	usages: "flop", 
 	cooldowns: 0,
 };
 
