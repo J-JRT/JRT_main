@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "delete",
 	version: "1.0.0",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "D-Jukie",
 	description: "Xóa tất cả tin nhắn trên acc bot",
 	commandCategory: "Hệ thống admin-bot",
@@ -10,7 +10,7 @@ module.exports.config = {
 };
 
 module.exports.run = function({ api, event, args, getText }) {
-if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
   if (args[0] == "all") {
  return api.getThreadList(1000, null, ["INBOX"], (err, list) => {
  	if (err) throw err;
