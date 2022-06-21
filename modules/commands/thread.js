@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "thread",
 	version: "1.0.5",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "Mirai Team",
 	description: "Cấm hoặc gỡ cấm nhóm",
 	commandCategory: "Hệ thống admin-bot",
@@ -136,7 +136,7 @@ module.exports.handleReaction = async ({ event, api, Threads, handleReaction, ge
 
 module.exports.run = async ({ event, api, args, Threads, getText }) => { 
 	const { threadID, messageID } = event;
-  if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 	var targetID = String(args[1]);
 	var reason = (args.slice(2, args.length)).join(" ") || null;
 
