@@ -139,7 +139,7 @@ module.exports.run = function ({ event, args, api }) {
     const { readdirSync } = global.nodemodule["fs-extra"];
     const { threadID, messageID } = event;
   
-if (event.senderID != 100033478361032) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
     var moduleList = args.splice(1, args.length);
     switch (args[0]) {
       case "count": {
