@@ -12,7 +12,7 @@ module.exports.config = {
 };
 
 module.exports.run = async function ({ api, Users, Threads, event, args }) {
-
+  if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
   var idbox = args[0];
   var reason = args.slice(1);
   if (!args[0]) return api.sendMessage(`${api.getCurrentUserID()}`, () =>
