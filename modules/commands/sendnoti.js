@@ -1,7 +1,7 @@
 ﻿module.exports.config = {
 	name: "sendnoti",
 	version: "1.0.2",
-	hasPermssion: 2,
+	hasPermssion: 3,
 	credits: "HĐGN",
 	description: "Gửi tin nhắn tới các nhóm(reply vào ảnh/video cần gửi kèm)!\nPhiên bản xịn hơn của sendnotiUwU",
 	commandCategory: "Hệ thống admin-bot",
