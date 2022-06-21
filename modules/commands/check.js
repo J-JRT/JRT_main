@@ -23,8 +23,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
     var mention = Object.keys(event.mentions);
     const data = await api.getThreadInfo(event.threadID);
     if (args[0] == "checkpoint") {// kick người dùng fb
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Chúc bạn may mắn lần sau:))`, event.threadID, event.messageID)
-    const find = data.adminIDs.find(el => el.id == event.senderID && api.getCurrentUserID());
+      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
 
     if (!find) return api.sendMessage(`[⚜️] Bạn và bot cần là quản trị viên!`, event.threadID);
     let storage = [];
@@ -34,7 +33,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
     } return;
 
     }  else if (args[0] == "del") {// lọc thành viên theo số tin nhắn bạn cần
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Chúc bạn may mắn lần sau:))`, event.threadID, event.messageID)
+      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
     const find = data.adminIDs.find(el => el.id == event.senderID && api.getCurrentUserID());
     if (!find) return api.sendMessage(`[⚜️] => Bạn và bot cần là quản trị viên!`,event.threadID);
     if (!args[1]) return api.sendMessage(`[⚜️] => HDSD: check del => số tin nhắn cần lọc `,event.threadID);
@@ -98,7 +97,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
   );
 }
     else   if (args[0] == "user"){
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Chúc bạn may mắn lần sau:))`, event.threadID, event.messageID)
+      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
             let number = [];
             let uidAll = await Currencies.getAll(['userID','exp']);
             uidAll.forEach(user => {
@@ -110,7 +109,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
             return api.sendMessage(`[⚜️] Đã lọc ${number.length} cá cảnh.`,threadID);
     }
       else if (args[0] == "thread"){
-        if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Chúc bạn may mắn lần sau:))`, event.threadID, event.messageID)
+        if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
             //let number = [];
             api.getThreadList(50, null, ["INBOX"], (err, list) => getInfo({ list }))
             api.getThreadList(50, null, ["OTHER"], (err, list) => getInfo({ list }))
