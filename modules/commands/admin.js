@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "admin",
 	version: "1.0.5",
-	hasPermssion: 3,
+	hasPermssion: 0,
 	credits: "Mirai Team",
 	description: "Quản lý admin bot",
 	commandCategory: "Hệ thống admin-bot",
@@ -127,6 +127,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         }
         case 'only': {
       //---> CODE ADMIN ONLY<---//
+	if (permssion != 3) return api.sendMessage("[⚜️] Xin lỗi! lệnh này chỉ admin bot mới dùng được", threadID, messageID);
         if (config.adminOnly == false) {
           config.adminOnly = true;
           api.sendMessage("» Bật thành công admin only", threadID, messageID);
