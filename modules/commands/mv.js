@@ -26,7 +26,7 @@ module.exports.run = async({api,event,args,client,Users,Threads,__GLOBAL,Currenc
      if (args[0] == "gái") {
   var money = (await Currencies.getData(event.senderID)).money
   if (money >= 1000) {
-  axios.get('https://jrt-api.j-jrt-official.repl.co/videogaixinh').then(res => {
+  axios.get('https://jrt-api.jrt-official.repl.co/videogaixinh').then(res => {
   var video = res.data.data;
   let callback = function () {
           api.sendMessage({
@@ -40,10 +40,10 @@ module.exports.run = async({api,event,args,client,Users,Threads,__GLOBAL,Currenc
   } else return api.sendMessage("Bạn cần 1000 đô",event.threadID,event.messageID);
   }
     if (args[0] == "sex") {
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Không phải mở NSFW rồi xem gì xem đâu =))`, event.threadID, event.messageID)
-  var money = (await Currencies.getData(event.senderID)).money
+      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
+      var money = (await Currencies.getData(event.senderID)).money
   if (money >= 1000) {
-  axios.get('https://jrt-api.j-jrt-official.repl.co/videosex').then(res => {
+  axios.get('https://jrt-api.jrt-official.repl.co/videosex').then(res => {
   var video = res.data.data;
   let callback = function () {
           api.sendMessage({
