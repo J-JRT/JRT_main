@@ -40,6 +40,7 @@
         "fca-disme": "^3.0.7",
         "fca-horizon-remake": "^5.5.1",
         "figlet": "^1.5.2",
+        "fluent-ffmpeg": "^2.1.2",
         "fs": "0.0.1-security",
         "fs-extra": "^10.1.0",
         "gifencoder": "^2.0.1",
