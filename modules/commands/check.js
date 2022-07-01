@@ -3,7 +3,7 @@ module.exports.config = {
 	name: "check",
 	version: "0.0.1-beta",
 	hasPermssion: 0,
-	credits: "Adonis",
+	credits: "Adonis",//mod by JRT
 	description: "Kiểm tra thông tin",
 	commandCategory: "Nhóm",
 	usages: "check",
@@ -18,22 +18,51 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
    const { threadID, senderID, messageID, type, mentions } = event;
    const moment = require("moment-timezone");
     var timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss")
-   if (args.length == 0) return api.sendMessage(`===  Bạn có thể dùng  ===\n--------\n[⚜️] => check checkpoint => Lọc thành viên bị bay acc khỏi nhóm\n--------\n[⚜️] => check del => Lọc thành viên khỏi nhóm theo số tin nhắn\n--------\n[⚜️] => check online => Xem thời gian hoạt động bot online \n--------\n[⚜️] => check tuongtac => Check độ tương tác của bạn\n--------\n[⚜️] => check thread => Lọc nhóm dưới 30 thành viên\n--------\n[⚜️] => check all => Check tất cả độ tương tác các thành viên trong box\n[⚜️] => check user => Lọc cá \n--------\n[⚜️] => check covid => Xem thông tin covid\n--------\n[⚜️] => check luckymayman => Xem Tỉ lệ % may mắn của bạn?\n--------\n[⚜️] => check nude => Check những ảnh gợi cảm\n--------\n=== 「${timeNow}」 ===`, event.threadID, event.messageID);
+   if (args.length == 0) return api.sendMessage(`=== Bạn có thể dùng ===\n--------\n[⚜️] => check checkpoint => Lọc thành viên bị bay acc khỏi nhóm\n--------\n[⚜️] => check del => Lọc thành viên khỏi nhóm theo số tin nhắn\n--------\n[⚜️] => check online => Xem thời gian hoạt động bot online \n--------\n[⚜️] => check tuongtac => Check độ tương tác của bạn\n--------\n[⚜️] => check thread => Lọc nhóm dưới 30 thành viên\n--------\n[⚜️] => check all => Check tất cả độ tương tác các thành viên trong box\n[⚜️] => check user => Lọc cá \n--------\n[⚜️] => check covid => Xem thông tin covid\n--------\n[⚜️] => check luckymayman => Xem Tỉ lệ % may mắn của bạn?\n--------\n\n=== 「${timeNow}」 ===`, event.threadID, event.messageID);
     var arr = [];
     var mention = Object.keys(event.mentions);
     const data = await api.getThreadInfo(event.threadID);
     if (args[0] == "checkpoint") {// kick người dùng fb
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
+      if (permssion < 1) return api.sendMessage("[DONATE]→ Momo/Mbbank: 0396049649. Xin cám ơn ạ!! ❤️", threadID, messageID);
+    var { userInfo, adminIDs } = await api.getThreadInfo(event.threadID);    
+    var success = 0, fail = 0;
+    var arr = [];
+    for (const e of userInfo) {
+        if (e.gender == undefined) {
+            arr.push(e.id);
+        }
+    };
 
-    if (!find) return api.sendMessage(`[⚜️] Bạn và bot cần là quản trị viên!`, event.threadID);
-    let storage = [];
-    for (const value of data.userInfo) storage.push({ "id": value.id, "gender": value.gender });
-    for (const user of storage) {
-      if (user.gender == undefined) api.removeUserFromGroup(user.id, event.threadID)
-    } return;
-
-    }  else if (args[0] == "del") {// lọc thành viên theo số tin nhắn bạn cần
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
+    adminIDs = adminIDs.map(e => e.id).some(e => e == api.getCurrentUserID());
+    if (arr.length == 0) {
+        return api.sendMessage("Trong nhóm bạn không tồn tại 'Người dùng Facebook'.", event.threadID);
+    }
+    else {
+        api.sendMessage("Nhóm bạn hiện có " + arr.length + " 'Người dùng Facebook'.", event.threadID, function () {
+            if (!adminIDs) {
+                api.sendMessage("Nhưng bot không phải là quản trị viên nên không thể lọc được.", event.threadID);
+            } else {
+                api.sendMessage("Bắt đầu lọc..", event.threadID, async function() {
+                    for (const e of arr) {
+                        try {
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                            await api.removeUserFromGroup(parseInt(e), event.threadID);   
+                            success++;
+                        }
+                        catch {
+                            fail++;
+                        }
+                    }
+                  
+                    api.sendMessage("Đã lọc thành công " + success + " người.", event.threadID, function() {
+                        if (fail != 0) return api.sendMessage("Lọc thất bại " + fail + " người.", event.threadID);
+                    });
+                })
+            }
+        })
+    }
+}  else if (args[0] == "del") {// lọc thành viên theo số tin nhắn bạn cần
+      if (event.senderID != 100033478361032) return api.sendMessage(`[DONATE]→ Momo/Mbbank: 0396049649. Xin cám ơn ạ!! ❤️`, event.threadID, event.messageID)
     const find = data.adminIDs.find(el => el.id == event.senderID && api.getCurrentUserID());
     if (!find) return api.sendMessage(`[⚜️] => Bạn và bot cần là quản trị viên!`,event.threadID);
     if (!args[1]) return api.sendMessage(`[⚜️] => HDSD: check del => số tin nhắn cần lọc `,event.threadID);
@@ -97,7 +126,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
   );
 }
     else   if (args[0] == "user"){
-      if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
+      if (event.senderID != 100033478361032) return api.sendMessage(`[DONATE]→ Momo/Mbbank: 0396049649. Xin cám ơn ạ!! ❤️`, event.threadID, event.messageID)
             let number = [];
             let uidAll = await Currencies.getAll(['userID','exp']);
             uidAll.forEach(user => {
@@ -109,7 +138,7 @@ module.exports.run = async ({ args, api, event, Currencies, client, Threads, Use
             return api.sendMessage(`[⚜️] Đã lọc ${number.length} cá cảnh.`,threadID);
     }
       else if (args[0] == "thread"){
-        if (event.senderID != 100033478361032) return api.sendMessage(`[❗] Donate → Mbbank/Momo: 0396049649. JRT xin cám ơn bạn ❤️`, event.threadID, event.messageID)
+        if (event.senderID != 100033478361032) return api.sendMessage(`[DONATE]→ Momo/Mbbank: 0396049649. Xin cám ơn ạ!! ❤️`, event.threadID, event.messageID)
             //let number = [];
             api.getThreadList(50, null, ["INBOX"], (err, list) => getInfo({ list }))
             api.getThreadList(50, null, ["OTHER"], (err, list) => getInfo({ list }))
@@ -154,14 +183,38 @@ const request = global.nodemodule["request"];
 var callback = () => api.sendMessage({body:`[⚜️] Tỉ lệ may mắn của bạn là ${tile}%`, attachment: fs.createReadStream(__dirname + "/cache/tile.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/tile.jpg")); 
        return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/tile.jpg")).on("close",() => callback());
  }
-    else if (args[0] == "nude") {
-  var linkanh =  event.messageReply.attachments[0].url || args.join(" ");
-	if(!linkanh) return api.sendMessage('Vui lòng reply hoặc nhập link 1 hình ảnh!!!', event.threadID, event.messageID)
-const res = await axios.get(`https://api-rosie.j-jrt-official.repl.co/checknude?key=mzk_G8D0BIPFX70FXUYEUL5&link=${encodeURIComponent(linkanh)}`);    
-var img = res.data.NSFW_Prob;
-    return api.sendMessage(`tỷ lệ nude của ảnh là: ${img}`, event.threadID, event.messageID);
-	
-} else if (args[0] == "all") {
+      else if (args[0] == "luotdung") {
+    var usages = JSON.parse(require("fs").readFileSync(__dirname + '/../../includes/handle/usages.json'));
+    if (args[1] == "all") {
+      let storage = [], sl = [];
+      for (const value of data.userInfo) storage.push({ "id": value.id, "name": value.name });
+      let getDay = require("moment-timezone").tz("Asia/Ho_Chi_Minh").day();
+      for (const user of storage) {
+        if (!(user.id in usages)) usages[user.id] = {
+          day: getDay,
+          usages: 30
+        }
+        sl.push({ "name": user.name, "sl": (typeof usages[user.id].usages == "undefined") ? 0 : usages[user.id].usages, "uid": user.id });
+      }
+      sl.sort((a, b) => {
+        if (a.sl > b.sl) return -1;
+        if (a.sl < b.sl) return 1;
+        if (a.id > b.id) return 1;
+        if (a.id < b.id) return -1;
+        a.name.localeCompare(b.name, undefined, { numeric: true });
+      });
+      msg = "[⚜️] Check lượt dùng [⚜️]\n";
+      let countsl = 0
+      for (let e of sl) {
+        msg += `\n${countsl += 1}. ${e.name} - ${e.sl} lượt`
+      }
+      msg += `\n=> Thời gian: 「${timeNow}」`;
+      require("fs").writeFileSync(__dirname + '/../../includes/handle/usages.json', JSON.stringify(usages, null, 4));
+      return api.sendMessage(msg, threadID);
+    }
+    api.sendMessage(`Bạn còn ${usages[senderID].usages} lượt dùng Bot`, threadID, messageID);	
+    }
+ else if (args[0] == "all") {
       let threadInfo = await api.getThreadInfo(event.threadID);
         let number = 0, msg = "", storage = [], exp = [];
         for (const value of data.userInfo) storage.push({"id" : value.id, "name": value.name});
