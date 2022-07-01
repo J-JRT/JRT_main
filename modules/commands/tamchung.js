@@ -1,10 +1,10 @@
 module.exports.config = {
-    name: "namtay",
+    name: "tamchung",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "ProCoderMew",
+    credits: "ProCoderMew fix by bhoang",
     description: "",
-    commandCategory: "Tình yêu",
+    commandCategory: "NSFW",
     usages: "[tag]",
     cooldowns: 5,
     dependencies: {
@@ -20,9 +20,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'namtay.png');
+    const path = resolve(__dirname, 'cache/canvas', 'tam.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://imgur.com/vcG4det.jpg", path);
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/l0MzGof.jpg", path);
 }
 
 async function makeImage({ one, two }) {
@@ -32,22 +32,21 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let namtay_img = await jimp.read(__root + "/namtay.png");
-    let pathImg = __root + `/namtay_${one}_${two}.png`;
+    let tam_img = await jimp.read(__root + "/tam.png");
+    let pathImg = __root + `/tam_${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
     
-    let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: 'arraybuffer' })).data;
+    let getAvatarOne = (await axios.get(`https://le31.glitch.me/avt?q=${one}`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
-    
-    let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?height=720&width=720&access_token=170440784240186|bc82258eaaf93ee5b9f577a8d401bfc9`, { responseType: 'arraybuffer' })).data;
+    let getAvatarTwo = (await axios.get(`https://le31.glitch.me/avt?q=${two}`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    namtay_img.resize(700, 440).composite(circleOne.resize(50, 50), 287, 97).composite(circleTwo.resize(40, 40), 50, 137);
+    tam_img.resize(901,1300).composite(circleOne.resize(140, 140), 247, 243).composite(circleTwo.resize(150, 150), 382, 231);
     
-    let raw = await namtay_img.getBufferAsync("image/png");
+    let raw = await tam_img.getBufferAsync("image/png");
     
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
@@ -70,7 +69,7 @@ module.exports.run = async function ({ event, api, args }) {
     if (!mention) return api.sendMessage("Vui lòng tag 1 người", threadID, messageID);
     else {
         var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Nắm tay nhau thật chặt nhé " + tag + ' đừng buông tay nhé bae😍',
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "Tắm chung với anh nhé bae 🤤" + tag + " hãy giữ thăng bằng kẻo ngã nhé ",
             mentions: [{
           tag: tag,
           id: mention
