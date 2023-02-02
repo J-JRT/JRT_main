@@ -14,7 +14,7 @@
 -   ⚜️ My name is Nguyễn Hải Đăng.
 -   ❤️‍🔥 26/02/2003
 -   💬 My nickname is JRT
--   💬 My rela is Rosie (Hà Nhung)
+-   💬 My rela is Nguyễn Hồng Phấn (Tracy)
 -   💓 Relationship: Hẹn hò
 -   🍁 Profile: [Facebook](https://www.facebook.com/NHD.JRT.262)
 -   🍀 Describe yourself: I love to travel with my lover and travel to explore. Although I am a quiet person, but anyone who comes into contact with me, I am willing to open my heart. And especially I love this girl very much with all my heart and what I give her will be true and nothing more than that, friendship will rank 2nd and my lover will be 1st.
@@ -28,7 +28,7 @@
 &nbsp; <a href="https://www.instagram.com/hd.jrt.2k3" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/instagram-new.png" width="100" /></a>    
 &nbsp; <a href="https://github.com/J-JRT" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/github.png" width="100" /></a>
 &nbsp; <a href="https://www.facebook.com/NHD.JRT.262" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/facebook.png"  width="100" /></a>
-&nbsp; <a href="mailto:lehonguyen2k3@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/gmail.png"  width="100" /></a>
+&nbsp; <a href="mailto:dangz123456789z@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/plasticine/100/000000/gmail.png"  width="100" /></a>
 </p>
 <br>
 <a href="#" target="_blank">
