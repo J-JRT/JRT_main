@@ -12,7 +12,7 @@
         "type": "git",
         "url": "git+https://github.com/J-JRT/JRT_main.git"
     },
-    "author": "J-JRT",
+    "author": "JRT",
     "license": "GPL-3.0",
     "dependencies": {
         "@miraipr0ject/assets": "^1.0.9",
