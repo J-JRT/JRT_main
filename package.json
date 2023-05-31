@@ -1,6 +1,6 @@
 {
     "name": "JRT",
-    "version": "2.1.0",
+    "version": "2.0.0",
     "description": "Đây là source code được fix lại bởi JRT. Chúc các bạn có một ngày vui vẻ <3",
     "main": "mirai.js",
     "scripts": {
